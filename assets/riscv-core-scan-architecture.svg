@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" width="960" height="600" role="img" aria-labelledby="t d">
+<title id="t">riscv_core scan-inserted DFT architecture</title>
+<desc id="d">Functional ports and the test ports added by Tessent Scan around riscv_core. Sequential cells in the sub-blocks are converted to mux-scan flip-flops and stitched into five scan chains from ts_si[4:0] to ts_so[4:0], controlled by scan_en.</desc>
+<style>
+  .bg{fill:#ffffff}
+  text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;fill:#1f2328}
+  .h{font-size:17px;font-weight:600}
+  .s{font-size:12px}
+  .xs{font-size:11px}
+  .m{fill:#59636e}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  .box{fill:#f6f8fa;stroke:#d1d9e0;stroke-width:1.5}
+  .core{fill:none;stroke:#59636e;stroke-width:2}
+  .sub{fill:#ffffff;stroke:#d1d9e0;stroke-width:1.2}
+  .fn{stroke:#1baf7a;stroke-width:2;fill:none}
+  .fnf{fill:#1baf7a}
+  .sc{stroke:#2a78d6;stroke-width:2;fill:none}
+  .scf{fill:#2a78d6}
+  .se{stroke:#eb6834;stroke-width:2;fill:none}
+  .sef{fill:#eb6834}
+  .ln{stroke:#59636e;stroke-width:1.5;fill:none}
+  .dash{stroke-dasharray:5 4}
+  @media (prefers-color-scheme:dark){
+    .bg{fill:#0d1117} text{fill:#e6edf3} .m{fill:#9198a1}
+    .box{fill:#161b22;stroke:#3d444d} .core{stroke:#9198a1} .sub{fill:#0d1117;stroke:#3d444d}
+    .fn{stroke:#199e70} .fnf{fill:#199e70} .sc{stroke:#3987e5} .scf{fill:#3987e5}
+    .se{stroke:#d95926} .sef{fill:#d95926} .ln{stroke:#9198a1}
+  }
+</style>
+<defs>
+  <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8c959f"/></marker>
+</defs>
+<rect class="bg" width="960" height="600"/>
+<text class="h" x="24" y="32">riscv_core: scan-inserted DFT architecture (Tessent Scan, scan mode 'unwrapped')</text>
+<text class="s m" x="24" y="52">Names in monospace come from Tessent output in the course report. Functional I/O beyond clk_i / rst_i is not listed in the evidence.</text>
+
+<!-- left ports -->
+<text class="s" x="24" y="98" font-weight="600">Functional ports</text>
+<text class="s mono" x="24" y="124">clk_i</text><path class="fn" d="M70 120 H196" marker-end="url(#a)"/>
+<text class="s mono" x="24" y="150">rst_i</text><path class="fn" d="M70 146 H196" marker-end="url(#a)"/>
+<text class="xs m" x="24" y="176">functional inputs</text><path class="fn dash" d="M120 172 H196" marker-end="url(#a)"/>
+
+<text class="s" x="24" y="404" font-weight="600">Added test ports</text>
+<text class="s mono" x="24" y="488">scan_en</text><path class="se" d="M84 484 H196" marker-end="url(#a)"/>
+<text class="s mono" x="24" y="428">ts_si[4:0]</text><path class="sc" d="M104 424 H196" marker-end="url(#a)"/>
+
+<!-- core boundary -->
+<rect class="core" x="200" y="80" width="560" height="420" rx="10"/>
+<text class="s mono" x="214" y="100" font-weight="600">riscv_core</text>
+
+<!-- sub-blocks -->
+<rect class="box" x="216" y="112" width="232" height="120" rx="6"/>
+<text class="s mono" x="228" y="132">u_issue</text>
+<rect class="sub" x="228" y="142" width="100" height="76" rx="4"/><text class="xs mono" x="238" y="162">u_pipe_ctrl</text>
+<rect class="sub" x="336" y="142" width="100" height="76" rx="4"/><text class="xs mono" x="346" y="162">u_regfile</text>
+<rect class="box" x="458" y="112" width="88" height="120" rx="6"/><text class="s mono" x="470" y="132">u_csr</text>
+<rect class="box" x="554" y="112" width="88" height="120" rx="6"/><text class="s mono" x="566" y="132">u_mul</text>
+<rect class="box" x="650" y="112" width="96" height="120" rx="6"/><text class="s mono" x="662" y="132">u_div</text>
+<!-- flop glyphs in each block -->
+<g class="scf">
+  <rect x="240" y="190" width="14" height="14" rx="2"/><rect x="260" y="190" width="14" height="14" rx="2"/><rect x="280" y="190" width="14" height="14" rx="2"/>
+  <rect x="348" y="190" width="14" height="14" rx="2"/><rect x="368" y="190" width="14" height="14" rx="2"/><rect x="388" y="190" width="14" height="14" rx="2"/>
+  <rect x="470" y="190" width="14" height="14" rx="2"/><rect x="490" y="190" width="14" height="14" rx="2"/>
+  <rect x="566" y="190" width="14" height="14" rx="2"/><rect x="586" y="190" width="14" height="14" rx="2"/>
+  <rect x="662" y="190" width="14" height="14" rx="2"/><rect x="682" y="190" width="14" height="14" rx="2"/><rect x="702" y="190" width="14" height="14" rx="2"/>
+</g>
+<text class="xs m" x="216" y="252">Sub-block names from report_test_logic / report_scan_cells. Other riscv_core logic exists but is not itemised in the evidence.</text>
+
+<!-- conversion -->
+<rect class="box" x="216" y="268" width="528" height="70" rx="6"/>
+<text class="s" x="230" y="290" font-weight="600">2319 sequential cells → mux-scan flip-flops (SDFCNQD1HPBWP, clk_i)</text>
+<text class="xs m" x="230" y="309">Count from the report text; the five chain lengths below also sum to 2319.</text>
+<text class="xs m" x="230" y="326">insert_test_logic also added 5 lockup latches (LNQD4HPBWP) + 5 buffers (CKBD2HPBWP).</text>
+
+<!-- chains -->
+<text class="s" x="216" y="362" font-weight="600">5 scan chains, stitched by analyze_scan_chains + insert_test_logic</text>
+<g>
+  <path class="sc" d="M200 384 H740"/><text class="xs mono" x="610" y="380">chain0  464</text>
+  <path class="sc" d="M200 404 H740"/><text class="xs mono" x="610" y="400">chain1  464</text>
+  <path class="sc" d="M200 424 H740"/><text class="xs mono" x="610" y="420">chain2  464</text>
+  <path class="sc" d="M200 444 H740"/><text class="xs mono" x="610" y="440">chain3  464</text>
+  <path class="sc" d="M200 464 H740"/><text class="xs mono" x="610" y="460">chain4  463</text>
+</g>
+<g class="scf">
+  <rect x="236" y="379" width="10" height="10" rx="2"/><rect x="256" y="379" width="10" height="10" rx="2"/><rect x="276" y="379" width="10" height="10" rx="2"/>
+  <rect x="236" y="399" width="10" height="10" rx="2"/><rect x="256" y="399" width="10" height="10" rx="2"/><rect x="276" y="399" width="10" height="10" rx="2"/>
+  <rect x="236" y="419" width="10" height="10" rx="2"/><rect x="256" y="419" width="10" height="10" rx="2"/><rect x="276" y="419" width="10" height="10" rx="2"/>
+  <rect x="236" y="439" width="10" height="10" rx="2"/><rect x="256" y="439" width="10" height="10" rx="2"/><rect x="276" y="439" width="10" height="10" rx="2"/>
+  <rect x="236" y="459" width="10" height="10" rx="2"/><rect x="256" y="459" width="10" height="10" rx="2"/><rect x="276" y="459" width="10" height="10" rx="2"/>
+</g>
+<path class="se dash" d="M200 484 H310 V376"/>
+<text class="xs m" x="320" y="488">scan_en drives the scan-enable pin of every scan cell (cells drawn schematically)</text>
+
+<!-- right ports -->
+<path class="sc" d="M760 424 H860" marker-end="url(#a)"/><text class="s mono" x="776" y="414">ts_so[4:0]</text>
+<path class="fn dash" d="M760 160 H860" marker-end="url(#a)"/><text class="xs m" x="776" y="150">functional outputs</text>
+
+<!-- modes -->
+<rect class="box" x="24" y="520" width="440" height="64" rx="6"/>
+<rect class="fnf" x="36" y="534" width="10" height="10" rx="2"/>
+<text class="s" x="54" y="543" font-weight="600">Functional mode (scan_en de-asserted)</text>
+<text class="xs m" x="54" y="563">Each flip-flop captures D from the combinational logic;</text>
+<text class="xs m" x="54" y="577">the core behaves as the original synthesized design.</text>
+<rect class="box" x="484" y="520" width="452" height="64" rx="6"/>
+<rect class="scf" x="496" y="534" width="10" height="10" rx="2"/>
+<text class="s" x="514" y="543" font-weight="600">Scan shift mode (scan_en asserted)</text>
+<text class="xs m" x="514" y="563">Each flip-flop loads SI from its predecessor, so the 5 chains act as</text>
+<text class="xs m" x="514" y="577">shift registers: ts_si[i] → 464 / 463 cells → ts_so[i].</text>
+</svg>

@@ -1,0 +1,38 @@
+# Transcribed from a Tessent Scan terminal screenshot in the project report
+# (scan-insertion/results/screenshots/tessent-test-logic-insertion.png). This is NOT the original log file.
+# Commands: insert_test_logic, report_test_logic
+
+//  Chain allocation of 'unwrapped' mode completed:
+Distribution - populating 'unwrapped' chains: 100.0% completed (estimate//  command: insert_test_logic
+# ^ transcribed as displayed; the terminal overwrote the end of the progress line.
+#   "100.0% completed" is a chain-distribution progress indicator, not a scan-coverage metric.
+============================
+Test Logic Insertion Summary:
+============================
+
+  Structural Data:
+  ----------------
+                    Added top-level port count:     3
+                         Added instance count:     10
+
+  Logical Data:
+  -------------
+                    Added retiming logic count:     5
+           Added scan chain count (unwrapped):     5
+
+//  Warning: Flattened model deleted.
+//  command: report_test_logic
+//  new pins: ts_si, ts_so, scan_en
+
+//  Instance                                                              module
+//  ---------------------------------------------------------------------------------
+//  riscv_core/u_mul/ts_lockup_latchn_clkc4_intno668_i                     LNQD4HPBWP
+//  riscv_core/u_div/ts_lockup_latchn_clkc0_intno750_i                     LNQD4HPBWP
+//  riscv_core/u_issue/u_pipe_ctrl/ts_lockup_latchn_clkc1_intno1024_i      LNQD4HPBWP
+//  riscv_core/u_issue/u_regfile/ts_lockup_latchn_clkc2_intno1488_i        LNQD4HPBWP
+//  riscv_core/u_issue/u_regfile/ts_lockup_latchn_clkc3_intno1952_i        LNQD4HPBWP
+//  riscv_core/u_csr/tessent_persistent_cell_buf_extsi2319_i               CKBD2HPBWP
+//  riscv_core/u_div/tessent_persistent_cell_buf_extsi2320_i               CKBD2HPBWP
+//  riscv_core/u_issue/u_pipe_ctrl/tessent_persistent_cell_buf_extsi2321_i CKBD2HPBWP
+//  riscv_core/u_issue/u_regfile/tessent_persistent_cell_buf_extsi2322_i   CKBD2HPBWP
+//  riscv_core/u_issue/u_regfile/tessent_persistent_cell_buf_extsi2323_i   CKBD2HPBWP

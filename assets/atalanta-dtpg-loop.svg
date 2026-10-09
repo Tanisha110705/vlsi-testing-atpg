@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="760" viewBox="0 0 760 760" role="img" aria-labelledby="t d" font-family='system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif'>
+<title id="t">Deterministic test generation loop</title><desc id="d">Per-fault loop of Atalanta deterministic test pattern generation using FAN, with redundant and aborted outcomes and fault dropping.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52514e"/></marker></defs>
+<rect width="760" height="760" fill="#fcfcfb"/>
+<text x="24" y="32" font-size="17" fill="#0b0b0b" text-anchor="start" font-weight="600" font-style="normal">ATPG Flow: Deterministic Test Generation for One Fault</text>
+<text x="24" y="54" font-size="12.5" fill="#52514e" text-anchor="start" font-weight="normal" font-style="normal">DTPG phase of Atalanta (FAN algorithm), repeated until no undetected, unclassified fault remains</text>
+<rect x="120.0" y="78" width="300" height="56" rx="8" fill="#ffffff" stroke="#c3c2b7" stroke-width="1.5"/>
+<text x="270.0" y="103.0" font-size="13.5" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">Select next target fault</text>
+<text x="270.0" y="120.0" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">undetected after RPT and earlier tests</text>
+<path d="M270,134 L270,156" fill="none" stroke="#52514e" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="120.0" y="158" width="300" height="56" rx="8" fill="#eaf2fc" stroke="#2a78d6" stroke-width="1.5"/>
+<text x="270.0" y="183.0" font-size="13.5" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">Fault activation</text>
+<text x="270.0" y="200.0" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">drive the faulty line to the opposite value</text>
+<path d="M270,214 L270,236" fill="none" stroke="#52514e" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="120.0" y="238" width="300" height="56" rx="8" fill="#eaf2fc" stroke="#2a78d6" stroke-width="1.5"/>
+<text x="270.0" y="263.0" font-size="13.5" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">Fault propagation</text>
+<text x="270.0" y="280.0" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">sensitize a path to a primary output (D-frontier)</text>
+<path d="M270,294 L270,316" fill="none" stroke="#52514e" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="120.0" y="318" width="300" height="56" rx="8" fill="#eaf2fc" stroke="#2a78d6" stroke-width="1.5"/>
+<text x="270.0" y="343.0" font-size="13.5" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">Line justification</text>
+<text x="270.0" y="360.0" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">backtrace objectives to primary inputs</text>
+<path d="M270,374 L270,394" fill="none" stroke="#52514e" stroke-width="1.6" marker-end="url(#arr)"/>
+<polygon points="270,396.0 380.0,448 270,500.0 160.0,448" fill="#ffffff" stroke="#c3c2b7" stroke-width="1.5"/>
+<text x="270" y="452" font-size="12" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">Test found?</text>
+<path d="M380,448 L560,448" fill="none" stroke="#52514e" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="388" y="440" font-size="11.5" fill="#52514e" text-anchor="start" font-weight="600" font-style="normal">conflict</text>
+<polygon points="620,403.0 680.0,448 620,493.0 560.0,448" fill="#ffffff" stroke="#c3c2b7" stroke-width="1.5"/>
+<text x="620" y="444" font-size="12" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">Backtracks</text>
+<text x="620" y="460" font-size="12" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">&gt; 10?</text>
+<path d="M620,403 L620,370" fill="none" stroke="#52514e" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="628" y="392" font-size="11.5" fill="#52514e" text-anchor="start" font-weight="600" font-style="normal">no: backtrack</text>
+<path d="M620,370 L620,346 L422.0,346" fill="none" stroke="#52514e" stroke-width="1.6" marker-end="url(#arr)"/>
+<path d="M620,493 L620,548" fill="none" stroke="#52514e" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="628" y="524" font-size="11.5" fill="#52514e" text-anchor="start" font-weight="600" font-style="normal">yes</text>
+<rect x="540" y="550" width="160" height="50" rx="8" fill="#fdf0ea" stroke="#eb6834" stroke-width="1.5"/>
+<text x="620.0" y="572.0" font-size="13.5" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">Aborted</text>
+<text x="620.0" y="589.0" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">counted as not detected</text>
+<path d="M330,472 L330,665 L393,665" fill="none" stroke="#52514e" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="340" y="560" font-size="11.5" fill="#52514e" text-anchor="start" font-weight="600" font-style="normal">no test and no</text>
+<text x="340" y="576" font-size="11.5" fill="#52514e" text-anchor="start" font-weight="600" font-style="normal">alternatives left</text>
+<rect x="395" y="640" width="160" height="50" rx="8" fill="#fdf0ea" stroke="#eb6834" stroke-width="1.5"/>
+<text x="475.0" y="662.0" font-size="13.5" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">Identified redundant</text>
+<text x="475.0" y="679.0" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">fault proven untestable</text>
+<path d="M270,500 L270,528" fill="none" stroke="#52514e" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="278" y="518" font-size="11.5" fill="#52514e" text-anchor="start" font-weight="600" font-style="normal">yes</text>
+<rect x="120.0" y="530" width="180" height="56" rx="8" fill="#eaf2fc" stroke="#2a78d6" stroke-width="1.5"/>
+<text x="210.0" y="555.0" font-size="13.5" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">Fill unspecified inputs</text>
+<text x="210.0" y="572.0" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">-0 / -1 / -R / -X</text>
+<path d="M210.0,586 L210.0,608" fill="none" stroke="#52514e" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="120.0" y="610" width="180" height="68" rx="8" fill="#e8f6ef" stroke="#1baf7a" stroke-width="1.5"/>
+<text x="210.0" y="633.0" font-size="13.5" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">Fault-simulate the test</text>
+<text x="210.0" y="650.0" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">drop every fault it detects;</text>
+<text x="210.0" y="667.0" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">update coverage</text>
+<path d="M120.0,644 L86.0,644 L86.0,106 L118.0,106" fill="none" stroke="#52514e" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="80.0" y="380" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="600" font-style="normal">next fault</text>
+<text x="24" y="730" font-size="11" fill="#898781" text-anchor="start" font-weight="normal" font-style="normal">Aborted and redundant faults also return to 'Select next target fault'. After the loop, the pattern set goes to compaction (TC).</text>
+<text x="24" y="746" font-size="11" fill="#898781" text-anchor="start" font-weight="normal" font-style="normal">Conceptual diagram of the FAN-based procedure documented for Atalanta; not a trace of a specific run.</text>
+</svg>

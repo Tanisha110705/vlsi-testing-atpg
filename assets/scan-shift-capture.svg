@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" width="960" height="500" role="img" aria-labelledby="t d">
+<title id="t">Conceptual scan shift and capture operation</title>
+<desc id="d">A mux-scan cell selects scan-in when scan_en is asserted and functional D otherwise. A conceptual timing diagram shows shift-in with scan_en asserted, a capture cycle with scan_en de-asserted, and shift-out overlapped with the next shift-in. This is not a simulator capture.</desc>
+<style>
+  .bg{fill:#ffffff}
+  text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;fill:#1f2328}
+  .h{font-size:17px;font-weight:600}
+  .b{font-size:13px;font-weight:600}
+  .s{font-size:12px}
+  .xs{font-size:11px}
+  .m{fill:#59636e}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  .panel{fill:#f6f8fa;stroke:#d1d9e0;stroke-width:1.5}
+  .gate{fill:#ffffff;stroke:#1f2328;stroke-width:1.8}
+  .w{stroke:#1f2328;stroke-width:1.8;fill:none}
+  .sc{stroke:#2a78d6;stroke-width:2;fill:none}
+  .fn{stroke:#1baf7a;stroke-width:2;fill:none}
+  .se{stroke:#eb6834;stroke-width:2;fill:none}
+  .shift{fill:#2a78d6;fill-opacity:.10}
+  .cap{fill:#eb6834;fill-opacity:.12}
+  .ln{stroke:#8c959f;stroke-width:1;fill:none;stroke-dasharray:4 4}
+  @media (prefers-color-scheme:dark){
+    .bg{fill:#0d1117} text{fill:#e6edf3} .m{fill:#9198a1}
+    .panel{fill:#161b22;stroke:#3d444d} .gate{fill:#0d1117;stroke:#e6edf3} .w{stroke:#e6edf3}
+    .sc{stroke:#3987e5} .fn{stroke:#199e70} .se{stroke:#d95926}
+    .shift{fill:#3987e5;fill-opacity:.16} .cap{fill:#d95926;fill-opacity:.18} .ln{stroke:#6e7681}
+  }
+</style>
+<defs>
+  <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8c959f"/></marker>
+</defs>
+<rect class="bg" width="960" height="500"/>
+<text class="h" x="24" y="32">Scan operation: shift → capture → shift (conceptual)</text>
+<text class="s m" x="24" y="52">Drawn by hand to explain the protocol. This is NOT a QuestaSim waveform; see fault-simulation/results/screenshots/ for the real captures.</text>
+
+<!-- mux-scan cell -->
+<rect class="panel" x="24" y="68" width="400" height="160" rx="8"/>
+<text class="b" x="40" y="90">Mux-scan cell</text>
+<text class="xs m" x="40" y="106">riscv_core scan cells are SDFCNQD1HPBWP</text>
+<path class="fn" d="M60 130 H150"/><text class="s mono" x="40" y="134">D</text><text class="xs m" x="70" y="124">from logic</text>
+<path class="sc" d="M60 170 H150"/><text class="s mono" x="40" y="174">SI</text><text class="xs m" x="70" y="164">from prev. cell</text>
+<path class="gate" d="M150 112 L190 126 V176 L150 190 Z"/>
+<text class="xs" x="158" y="137">0</text><text class="xs" x="158" y="175">1</text>
+<path class="se" d="M170 214 V184"/><text class="s mono" x="140" y="224" >scan_en</text>
+<path class="w" d="M190 151 H236"/>
+<rect class="gate" x="236" y="120" width="70" height="66" rx="3"/>
+<text class="s" x="258" y="150">FF</text><path class="w" d="M236 172 L246 178 L236 184"/>
+<text class="xs mono" x="250" y="182">clk</text>
+<path class="w" d="M306 151 H360"/><text class="s mono" x="366" y="155">Q / SO</text>
+<text class="xs m" x="320" y="176">to logic and</text><text class="xs m" x="320" y="190">next cell's SI</text>
+
+<!-- mode text -->
+<rect class="panel" x="440" y="68" width="496" height="160" rx="8"/>
+<text class="b" x="456" y="90">Three phases for each pattern</text>
+<text class="s" x="456" y="114"><tspan font-weight="600">1 Shift-in</tspan> (scan_en asserted): the chains act as shift registers.</text>
+<text class="s" x="456" y="132">One bit per chain per clock, so riscv_core needs 464 clocks (longest chain).</text>
+<text class="s" x="456" y="156"><tspan font-weight="600">2 Capture</tspan> (scan_en de-asserted): the flip-flops capture the logic's</text>
+<text class="s" x="456" y="174">response. Stuck-at uses 1 pulse; broadside transition uses launch + capture.</text>
+<text class="s" x="456" y="198"><tspan font-weight="600">3 Shift-out</tspan> (scan_en asserted): the response leaves on ts_so while</text>
+<text class="s" x="456" y="216">the next pattern shifts in on ts_si (overlapped).</text>
+
+<!-- timing -->
+<rect class="shift" x="110" y="250" width="340" height="226"/>
+<rect class="cap" x="450" y="250" width="150" height="226"/>
+<rect class="shift" x="600" y="250" width="336" height="226"/>
+<text class="s" x="120" y="268" font-weight="600">shift-in (pattern n)</text>
+<text class="s" x="460" y="268" font-weight="600">capture</text>
+<text class="s" x="610" y="268" font-weight="600">shift-out n / shift-in n+1</text>
+
+<text class="s mono" x="24" y="304">clk</text>
+<path class="w" d="M110 308 H130 V290 H145 V308 H170 V290 H185 V308 H210 V290 H225 V308 H250 V290 H265 V308 H290"/>
+<text class="s" x="300" y="304">…</text>
+<path class="w" d="M320 308 H340 V290 H355 V308 H380 V290 H395 V308 H450 H490 V290 H505 V308 H600 H620 V290 H635 V308 H660 V290 H675 V308 H700 V290 H715 V308 H740"/>
+<text class="s" x="750" y="304">…</text>
+<path class="w" d="M770 308 H790 V290 H805 V308 H830 V290 H845 V308 H870 V290 H885 V308 H936"/>
+<text class="xs m" x="476" y="286">capture pulse</text>
+
+<text class="s mono" x="24" y="352">scan_en</text>
+<path class="se" d="M110 334 H450 V356 H600 V334 H936"/>
+<text class="xs m" x="120" y="348">asserted</text><text class="xs m" x="470" y="350">de-asserted</text><text class="xs m" x="610" y="348">asserted</text>
+
+<text class="s mono" x="24" y="398">ts_si[i]</text>
+<path class="sc" d="M110 384 H450 M110 404 H450 M600 384 H936 M600 404 H936"/>
+<text class="xs" x="124" y="398">b0   b1   b2   …   stimulus bits for pattern n   …</text>
+<text class="xs m" x="470" y="398">don't care</text>
+<text class="xs" x="614" y="398">stimulus bits for pattern n+1   …</text>
+
+<text class="s mono" x="24" y="446">ts_so[i]</text>
+<path class="sc" d="M110 432 H450 M110 452 H450 M600 432 H936 M600 452 H936"/>
+<text class="xs m" x="124" y="446">response of pattern n−1 (compared by tester)</text>
+<text class="xs" x="614" y="446">captured response of pattern n → compare</text>
+<line class="ln" x1="450" y1="250" x2="450" y2="476"/><line class="ln" x1="600" y1="250" x2="600" y2="476"/>
+<text class="xs m" x="110" y="492">For the broadside transition patterns, the capture window holds two at-speed pulses (launch, capture) instead of one.</text>
+</svg>

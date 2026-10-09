@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 470" width="960" height="470" role="img" aria-labelledby="t d">
+<title id="t">Stuck-at and transition fault models</title>
+<desc id="d">Left: a stuck-at-0 fault on an AND-gate input, detected by driving the input to 1, holding the other input at 1, and observing the output. Right: a slow-to-rise transition fault, where the node rises after the capture edge so the captured value is wrong.</desc>
+<style>
+  .bg{fill:#ffffff}
+  text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;fill:#1f2328}
+  .h{font-size:17px;font-weight:600}
+  .b{font-size:13px;font-weight:600}
+  .s{font-size:12px}
+  .xs{font-size:11px}
+  .m{fill:#59636e}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  .panel{fill:#f6f8fa;stroke:#d1d9e0;stroke-width:1.5}
+  .gate{fill:#ffffff;stroke:#1f2328;stroke-width:2}
+  .w{stroke:#1f2328;stroke-width:2;fill:none}
+  .sa{stroke:#2a78d6;stroke-width:2.5;fill:none}
+  .saf{fill:#2a78d6}
+  .tf{stroke:#eb6834;stroke-width:2.5;fill:none}
+  .flt{stroke:#e34948;stroke-width:3}
+  .ln{stroke:#8c959f;stroke-width:1.2;fill:none;stroke-dasharray:4 4}
+  .scan{fill:#ffffff;stroke:#2a78d6;stroke-width:1.5}
+  @media (prefers-color-scheme:dark){
+    .bg{fill:#0d1117} text{fill:#e6edf3} .m{fill:#9198a1}
+    .panel{fill:#161b22;stroke:#3d444d} .gate{fill:#0d1117;stroke:#e6edf3} .w{stroke:#e6edf3}
+    .sa{stroke:#3987e5} .saf{fill:#3987e5} .tf{stroke:#d95926} .flt{stroke:#e66767} .ln{stroke:#6e7681}
+    .scan{fill:#0d1117;stroke:#3987e5}
+  }
+</style>
+<rect class="bg" width="960" height="470"/>
+<text class="h" x="24" y="32">Fault models targeted by the ATPG runs</text>
+<text class="s m" x="24" y="52">Conceptual illustrations. The fault types match the Tessent runs: the default stuck-at model, and set_fault_type transition.</text>
+
+<!-- ============ stuck-at panel ============ -->
+<rect class="panel" x="24" y="68" width="444" height="388" rx="8"/>
+<text class="b" x="40" y="92">Stuck-at fault (SA0 / SA1)</text>
+<text class="xs m" x="40" y="110">A net is permanently tied to 0 or 1 by a defect: a static fault,</text>
+<text class="xs m" x="40" y="124">so one capture cycle is enough.</text>
+
+<!-- scan cells driving gate -->
+<rect class="scan" x="52" y="146" width="56" height="30" rx="4"/><text class="xs" x="62" y="165">scan FF</text>
+<rect class="scan" x="52" y="206" width="56" height="30" rx="4"/><text class="xs" x="62" y="225">scan FF</text>
+<path class="w" d="M108 161 H200"/><path class="w" d="M108 221 H200"/>
+<text class="s mono" x="120" y="153">A = 1</text>
+<text class="s mono" x="120" y="241">B = 1</text>
+<!-- fault marker on A -->
+<line class="flt" x1="174" y1="151" x2="188" y2="171"/><line class="flt" x1="188" y1="151" x2="174" y2="171"/>
+<text class="xs" x="168" y="190">SA0</text>
+<!-- AND gate -->
+<path class="gate" d="M200 141 H236 A50 50 0 0 1 236 241 H200 Z"/>
+<text class="s" x="212" y="196">AND</text>
+<path class="w" d="M286 191 H360"/>
+<rect class="scan" x="360" y="176" width="56" height="30" rx="4"/><text class="xs" x="370" y="195">scan FF</text>
+<text class="s mono" x="296" y="182">Z = 1/0</text>
+
+<text class="s" x="40" y="282"><tspan font-weight="600">Activate:</tspan> drive A to 1, the opposite of the stuck value.</text>
+<text class="s" x="40" y="302"><tspan font-weight="600">Propagate:</tspan> hold B at 1, the non-controlling value for AND.</text>
+<text class="s" x="40" y="322"><tspan font-weight="600">Observe:</tspan> a good circuit gives Z = 1; the faulty one gives Z = 0.</text>
+<text class="s" x="40" y="342">SA1 on A is the dual case: A = 0, B = 1, expect Z = 0.</text>
+<text class="xs m" x="40" y="372">How scan helps: A and B come from scan cells loaded by shifting (controllability),</text>
+<text class="xs m" x="40" y="388">and Z is captured into a scan cell and shifted out (observability). Internal nodes</text>
+<text class="xs m" x="40" y="404">deep in a sequential design become as easy to test as combinational logic.</text>
+<text class="xs m" x="40" y="436">Two faults (SA0, SA1) per fault site; stuck-at fault universe in the ATPG run: 3300.</text>
+
+<!-- ============ transition panel ============ -->
+<rect class="panel" x="492" y="68" width="444" height="388" rx="8"/>
+<text class="b" x="508" y="92">Transition fault (slow-to-rise / slow-to-fall)</text>
+<text class="xs m" x="508" y="110">A node switches, but too late for the capture edge: a delay defect.</text>
+
+<!-- time axis 560..900 -->
+<text class="xs mono" x="508" y="156">clk</text>
+<path class="w" d="M560 160 H610 V140 H626 V160 H756 V140 H772 V160 H906"/>
+<text class="xs m" x="596" y="132">launch</text>
+<text class="xs m" x="744" y="132">capture</text>
+<line class="ln" x1="764" y1="128" x2="764" y2="312"/>
+
+<text class="xs mono" x="508" y="206">good</text>
+<path class="sa" d="M560 210 H650 L660 190 H906"/>
+<text class="xs m" x="668" y="184">rises in time</text>
+<circle class="saf" cx="764" cy="190" r="4"/>
+<text class="xs" x="772" y="204">captures 1</text>
+
+<text class="xs mono" x="508" y="266">STR</text>
+<path class="tf" d="M560 270 H800 L810 250 H906"/>
+<text class="xs m" x="814" y="244">rises too late</text>
+<circle cx="764" cy="270" r="4" fill="#e34948"/>
+<text class="xs" x="772" y="288">captures 0 → detected</text>
+
+<text class="s" x="508" y="340"><tspan font-weight="600">Two vectors:</tspan> V1 sets the node to 0, V2 launches 0→1,</text>
+<text class="s" x="508" y="358">and the response is captured one at-speed cycle later.</text>
+<text class="s" x="508" y="378">Slow-to-fall is the dual case: the node is launched 1→0.</text>
+<text class="xs m" x="508" y="404">This run used broadside (launch-off-capture) patterns: the Tessent log warns</text>
+<text class="xs m" x="508" y="420">"Broadside transition testing requires minimum depth of 2" and calls</text>
+<text class="xs m mono" x="508" y="436">set_pattern_type -sequential 2</text>
+</svg>

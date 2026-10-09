@@ -1,0 +1,6 @@
+circuit,primary_inputs,primary_outputs,gates,levels,tpg_mode,random_pattern_limit_packets,backtrack_limit,rng_seed,compaction_mode,shuffle_limit,shuffles,patterns_before_compaction,patterns_after_compaction,patterns_uncompacted_run,fault_coverage_pct,collapsed_faults,redundant_faults,aborted_faults,backtracks,memory_kb,cpu_init_s,cpu_fault_sim_s,cpu_fan_s,cpu_total_s,evidence
+c880,60,26,383,24,RPT+DTPG+TC,16,10,1762600250,REVERSE+SHUFFLE,2,14,107,54,,100.000,942,0,0,0,13152,0.000,0.000,0.000,0.000,results/screenshots/c880_atalanta_summary.png
+c7552,207,108,3512,43,RPT+DTPG+TC,16,10,1762600438,NONE,,,,,373,98.252,7550,71,61,893,19292,0.000,0.050,0.333,0.383,results/screenshots/c7552_atalanta_summary.png
+c5315,178,123,2307,49,RPT+DTPG+TC,16,10,1762601531,REVERSE+SHUFFLE,2,12,216,117,,98.897,5350,59,0,66,30384,0.000,0.083,0.017,0.100,results/screenshots/c5315_atalanta_summary.png
+c3540,50,22,1669,47,RPT+DTPG+TC,16,10,1762601580,REVERSE+SHUFFLE,2,8,253,153,,96.004,3428,137,0,131,24588,0.000,0.567,0.017,0.583,results/screenshots/c3540_atalanta_summary.png
+c6288,32,32,2416,124,RPT+DTPG+TC,16,10,1761820498,REVERSE+SHUFFLE,2,13,52,27,,99.561,7744,34,0,34,34938,0.000,0.300,0.000,0.300,results/screenshots/c6288_atalanta_summary.png

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="640" viewBox="0 0 760 640" role="img" aria-labelledby="t d" font-family='system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif'>
+<title id="t">REVERSE + SHUFFLE test compaction</title><desc id="d">Atalanta static compaction: reverse-order fault simulation followed by repeated random shuffles, each dropping patterns that detect no new fault.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52514e"/></marker></defs>
+<rect width="760" height="640" fill="#fcfcfb"/>
+<text x="24" y="32" font-size="17" fill="#0b0b0b" text-anchor="start" font-weight="600" font-style="normal">Compaction Flow: REVERSE + SHUFFLE</text>
+<text x="24" y="54" font-size="12.5" fill="#52514e" text-anchor="start" font-weight="normal" font-style="normal">Static compaction by repeated fault simulation of the generated pattern set (Atalanta TC phase)</text>
+<rect x="100.0" y="78" width="380" height="58" rx="8" fill="#ffffff" stroke="#c3c2b7" stroke-width="1.5"/>
+<text x="290.0" y="104.0" font-size="13.5" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">Original pattern set</text>
+<text x="290.0" y="121.0" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">patterns in generation order P1 ... Pn</text>
+<path d="M290,136 L290,158" fill="none" stroke="#52514e" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="100.0" y="160" width="380" height="72" rx="8" fill="#eaf2fc" stroke="#2a78d6" stroke-width="1.5"/>
+<text x="290.0" y="185.0" font-size="13.5" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">Reverse-order fault simulation</text>
+<text x="290.0" y="202.0" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">apply Pn ... P1 on a fresh fault list;</text>
+<text x="290.0" y="219.0" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">drop each pattern that detects no new fault</text>
+<path d="M290,232 L290,254" fill="none" stroke="#52514e" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="100.0" y="256" width="380" height="72" rx="8" fill="#eaf2fc" stroke="#2a78d6" stroke-width="1.5"/>
+<text x="290.0" y="281.0" font-size="13.5" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">Shuffle compaction pass</text>
+<text x="290.0" y="298.0" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">apply surviving patterns in random order;</text>
+<text x="290.0" y="315.0" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">drop each pattern that detects no new fault</text>
+<path d="M290,328 L290,350" fill="none" stroke="#52514e" stroke-width="1.6" marker-end="url(#arr)"/>
+<polygon points="290,352.0 440.0,408 290,464.0 140.0,408" fill="#ffffff" stroke="#c3c2b7" stroke-width="1.5"/>
+<text x="290" y="404" font-size="12" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">Shuffles without a</text>
+<text x="290" y="420" font-size="12" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">dropped pattern = limit?</text>
+<path d="M440,408 L520,408 L520,292 L482.0,292" fill="none" stroke="#52514e" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="528" y="360" font-size="11.5" fill="#52514e" text-anchor="start" font-weight="600" font-style="normal">no: shuffle again</text>
+<path d="M290,464 L290,490" fill="none" stroke="#52514e" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="298" y="482" font-size="11.5" fill="#52514e" text-anchor="start" font-weight="600" font-style="normal">yes</text>
+<rect x="100.0" y="492" width="380" height="58" rx="8" fill="#e8f6ef" stroke="#1baf7a" stroke-width="1.5"/>
+<text x="290.0" y="518.0" font-size="13.5" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">Reduced pattern set</text>
+<text x="290.0" y="535.0" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">e.g. C880: 107 -&gt; 54 patterns after 14 shuffles</text>
+<path d="M290,550 L290,572" fill="none" stroke="#52514e" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="100.0" y="574" width="380" height="40" rx="8" fill="#ffffff" stroke="#c3c2b7" stroke-width="1.5"/>
+<text x="290.0" y="599.0" font-size="13.5" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">Coverage preserved by construction</text>
+<text x="508.0" y="510" font-size="11.5" fill="#52514e" text-anchor="start" font-weight="normal" font-style="normal">Limit of shuffling</text>
+<text x="508.0" y="526" font-size="11.5" fill="#52514e" text-anchor="start" font-weight="normal" font-style="normal">compaction = 2 in</text>
+<text x="508.0" y="542" font-size="11.5" fill="#52514e" text-anchor="start" font-weight="normal" font-style="normal">all compacted runs</text>
+<text x="508.0" y="592" font-size="11.5" fill="#52514e" text-anchor="start" font-weight="normal" font-style="normal">A pattern is removed only if</text>
+<text x="508.0" y="608" font-size="11.5" fill="#52514e" text-anchor="start" font-weight="normal" font-style="normal">every fault it detects is already</text>
+<text x="508.0" y="624" font-size="11.5" fill="#52514e" text-anchor="start" font-weight="normal" font-style="normal">detected by retained patterns</text>
+</svg>

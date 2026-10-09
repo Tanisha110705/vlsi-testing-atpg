@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" width="960" height="500" role="img" aria-labelledby="t d">
+<title id="t">riscv_core scan chain configuration</title>
+<desc id="d">Five scan chains, chain0 to chain4, from ts_si[i] to ts_so[i] with lengths 464, 464, 464, 464 and 463 scan cells. The longest-minus-shortest difference is one cell.</desc>
+<style>
+  .bg{fill:#ffffff}
+  text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;fill:#1f2328}
+  .h{font-size:17px;font-weight:600}
+  .s{font-size:12px}
+  .xs{font-size:11px}
+  .m{fill:#59636e}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  .box{fill:#f6f8fa;stroke:#d1d9e0;stroke-width:1.5}
+  .bar{fill:#2a78d6;fill-opacity:.14;stroke:#2a78d6;stroke-width:1.5}
+  .cell{fill:#2a78d6}
+  .sc{stroke:#2a78d6;stroke-width:2;fill:none}
+  .lat{fill:#ffffff;stroke:#eb6834;stroke-width:2}
+  .ln{stroke:#8c959f;stroke-width:1;fill:none}
+  @media (prefers-color-scheme:dark){
+    .bg{fill:#0d1117} text{fill:#e6edf3} .m{fill:#9198a1}
+    .box{fill:#161b22;stroke:#3d444d}
+    .bar{fill:#3987e5;stroke:#3987e5} .cell{fill:#3987e5} .sc{stroke:#3987e5}
+    .lat{fill:#0d1117;stroke:#d95926} .ln{stroke:#6e7681}
+  }
+</style>
+<defs>
+  <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8c959f"/></marker>
+</defs>
+<rect class="bg" width="960" height="500"/>
+<text class="h" x="24" y="32">riscv_core scan chains: report_scan_chains, scan mode 'unwrapped'</text>
+<text class="s m" x="24" y="52">Bar length is proportional to chain length (scale: 0–464 cells). All scan cells are clocked by clk_i (+edge).</text>
+
+<!-- column headers -->
+<text class="xs m" x="24" y="84">scan-in</text>
+<text class="xs m" x="196" y="84">scan cells (SDFCNQD1HPBWP)</text>
+<text class="xs m" x="744" y="84">scan-out</text>
+<text class="xs m" x="846" y="84">length</text>
+
+<!-- chain rows: bar from x=190 to 190+520*len/464 -->
+<g>
+  <text class="s mono" x="24" y="117">ts_si[0]</text><path class="sc" d="M90 113 H160" marker-end="url(#a)"/>
+  <rect class="lat" x="164" y="103" width="20" height="20" rx="3"/><text class="xs" x="169" y="117">L</text>
+  <path class="sc" d="M184 113 H190"/>
+  <rect class="bar" x="190" y="100" width="520" height="26" rx="4"/>
+  <rect class="cell" x="196" y="106" width="14" height="14" rx="2"/><rect class="cell" x="214" y="106" width="14" height="14" rx="2"/><rect class="cell" x="232" y="106" width="14" height="14" rx="2"/>
+  <text class="xs m" x="254" y="117">cell 0 = /u_div/dividend_q_reg[16], cell 1 = …[17], …</text>
+  <rect class="cell" x="690" y="106" width="14" height="14" rx="2"/><text class="xs m" x="644" y="117">cell 463</text>
+  <path class="sc" d="M710 113 H740" marker-end="url(#a)"/><text class="s mono" x="744" y="117">ts_so[0]</text>
+  <text class="s" x="846" y="117" font-weight="600">464</text>
+</g>
+<g>
+  <text class="s mono" x="24" y="161">ts_si[1]</text><path class="sc" d="M90 157 H186" marker-end="url(#a)"/>
+  <rect class="bar" x="190" y="144" width="520" height="26" rx="4"/>
+  <rect class="cell" x="196" y="150" width="14" height="14" rx="2"/><rect class="cell" x="214" y="150" width="14" height="14" rx="2"/><rect class="cell" x="232" y="150" width="14" height="14" rx="2"/>
+  <rect class="cell" x="690" y="150" width="14" height="14" rx="2"/><text class="xs m" x="644" y="161">cell 463</text>
+  <path class="sc" d="M710 157 H740" marker-end="url(#a)"/><text class="s mono" x="744" y="161">ts_so[1]</text>
+  <text class="s" x="846" y="161" font-weight="600">464</text>
+</g>
+<g>
+  <text class="s mono" x="24" y="205">ts_si[2]</text><path class="sc" d="M90 201 H186" marker-end="url(#a)"/>
+  <rect class="bar" x="190" y="188" width="520" height="26" rx="4"/>
+  <rect class="cell" x="196" y="194" width="14" height="14" rx="2"/><rect class="cell" x="214" y="194" width="14" height="14" rx="2"/><rect class="cell" x="232" y="194" width="14" height="14" rx="2"/>
+  <rect class="cell" x="690" y="194" width="14" height="14" rx="2"/><text class="xs m" x="644" y="205">cell 463</text>
+  <path class="sc" d="M710 201 H740" marker-end="url(#a)"/><text class="s mono" x="744" y="205">ts_so[2]</text>
+  <text class="s" x="846" y="205" font-weight="600">464</text>
+</g>
+<g>
+  <text class="s mono" x="24" y="249">ts_si[3]</text><path class="sc" d="M90 245 H186" marker-end="url(#a)"/>
+  <rect class="bar" x="190" y="232" width="520" height="26" rx="4"/>
+  <rect class="cell" x="196" y="238" width="14" height="14" rx="2"/><rect class="cell" x="214" y="238" width="14" height="14" rx="2"/><rect class="cell" x="232" y="238" width="14" height="14" rx="2"/>
+  <rect class="cell" x="690" y="238" width="14" height="14" rx="2"/><text class="xs m" x="644" y="249">cell 463</text>
+  <path class="sc" d="M710 245 H740" marker-end="url(#a)"/><text class="s mono" x="744" y="249">ts_so[3]</text>
+  <text class="s" x="846" y="249" font-weight="600">464</text>
+</g>
+<g>
+  <text class="s mono" x="24" y="293">ts_si[4]</text><path class="sc" d="M90 289 H186" marker-end="url(#a)"/>
+  <rect class="bar" x="190" y="276" width="518.9" height="26" rx="4"/>
+  <rect class="cell" x="196" y="282" width="14" height="14" rx="2"/><rect class="cell" x="214" y="282" width="14" height="14" rx="2"/><rect class="cell" x="232" y="282" width="14" height="14" rx="2"/>
+  <rect class="cell" x="689" y="282" width="14" height="14" rx="2"/><text class="xs m" x="643" y="293">cell 462</text>
+  <path class="sc" d="M709 289 H740" marker-end="url(#a)"/><text class="s mono" x="744" y="293">ts_so[4]</text>
+  <text class="s" x="846" y="293" font-weight="600">463</text>
+</g>
+<text class="xs m" x="190" y="322">L = negative-level lockup latch (LNQD4HPBWP, clk_i (−)) listed before cell 0 of chain0. Five such latches were added (one name per</text>
+<text class="xs m" x="190" y="337">clkc0 … clkc4); only chain0's cell listing appears in the evidence, so the latches on chains 1–4 are not drawn.</text>
+
+<!-- balance panel -->
+<rect class="box" x="24" y="356" width="440" height="124" rx="6"/>
+<text class="s" x="38" y="378" font-weight="600">Balance (from tool-reported lengths)</text>
+<text class="s" x="38" y="400">Total scan cells: 4 × 464 + 463 = 2319</text>
+<text class="s" x="38" y="420">Longest − shortest = 464 − 463 = 1 cell</text>
+<text class="s" x="38" y="440">Ideal longest chain = ⌈2319 / 5⌉ = 464 (this split meets it)</text>
+<text class="xs m" x="38" y="464">Arithmetic on the reported lengths; no tester time was measured.</text>
+
+<rect class="box" x="484" y="356" width="452" height="124" rx="6"/>
+<text class="s" x="498" y="378" font-weight="600">What it means for scan shifting</text>
+<text class="s" x="498" y="400">Shift cycles per scan load = longest chain = 464</text>
+<text class="s" x="498" y="420">chain4 is 1 cell shorter: it needs 1 padding bit per load</text>
+<text class="s" x="498" y="440">For comparison, a single chain would need 2319 cycles per load</text>
+<text class="xs m" x="498" y="464">Derived values. The ATPG runs in this report used other netlists.</text>
+</svg>

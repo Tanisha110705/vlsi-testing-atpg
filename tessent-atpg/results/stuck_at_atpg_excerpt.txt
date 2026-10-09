@@ -1,0 +1,60 @@
+==============================================================================
+Tessent ATPG output excerpt - stuck-at run (atpg_1.do)
+------------------------------------------------------------------------------
+Provenance: TRANSCRIBED by hand from the terminal screenshots in the course
+report (Task 3 Appendix, pages 19-20). NOT a raw tool log file. Cropped
+originals: tessent-atpg/results/screenshots/tessent-stuck-at-atpg-run.png
+           tessent-atpg/results/screenshots/tessent-stuck-at-statistics.png
+Netlist: scan_inserted.v (see docs/evidence-audit.md - this run's scan
+configuration, 6 chains / 22 shift cycles, is not the 5 x 464 riscv_core one).
+==============================================================================
+
+// All scan clocks successfully passed off-state check.
+// Capture clock is set to blif_clk_net.
+// 6 non-scan memory elements are identified.
+// 6 non-scan memory elements are identified as TLA. (D5)
+// command: add_faults -all
+// command: create_patterns
+//   Current clock restriction setting:   Domain_clock (edge interaction) (optimal)
+//   Current split capture setting:       Off (optimal)
+//   Current clock off simulation setting: Off (optimal)
+//   Current abort limit setting:         30
+//                          Calling:      set_abort_limit 300 100
+//   Current sequential depth:            0 (optimal)
+// Simulation performed for #gates = 1158  #faults = 2273
+// system mode = analysis    pattern source = internal patterns
+// #patterns  test      #faults  #faults   # eff.    # test    process   RE/AU/AAB
+// simulated  coverage  in list  detected  patterns  patterns  CPU time
+// deterministic ATPG invoked with comb/seq abort limit = 300/100
+//  ---        ------    ---      ---       ---       ---      0.14 sec  0/0/0
+//  64         98.14%    60       2213      48        48       0.15 sec
+//  ---        ------    ---      ---       ---       ---      0.15 sec  0/0/0
+//  85        100.00%     0         60      21        69       0.15 sec
+
+Statistics Report - Stuck-at Faults
+  Fault Classes            #faults (total)
+  FU (full)                3300
+  DS (det_simulation)      2273 (68.88%)
+  DI (det_implication)      955 (28.94%)
+  UU (unused)                 6 ( 0.18%)
+  TI (tied)                  66 ( 2.00%)
+  Coverage
+    test_coverage          100.00%
+    fault_coverage          97.82%
+    atpg_effectiveness     100.00%
+  #test_patterns              69
+  #simulated_patterns         85
+  CPU_time (secs)             3.8
+
+// command: write_patterns serialpatterns.v -verilog -serial -replace
+// command: write_patterns parallelpatterns.v -verilog -parallel -replace
+// command: write_patterns pattern.ascii -ascii -parallel -replace
+// command: report_scan_volume
+// Scan volume report.
+//    scan chains  : 6
+//    shift cycles : 22
+// pattern      # test    # scan   volume
+// type         patterns  loads    (cell loads or unloads)
+// chain_test       1        1        132
+// basic           69       69       9108
+// total           70       70       9240

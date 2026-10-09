@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="640" viewBox="0 0 1000 640" role="img" aria-labelledby="t d" font-family='system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif'>
+<title id="t">Unified DFT and ATPG workflow across the three experiments</title>
+<desc id="d">Three separately executed tracks. Track A: riscv_core RTL, synthesis, DFT rule checks, scan insertion and scan-chain analysis, ending in riscv_scan.v. A dashed gap marks that no ATPG run used riscv_scan.v. Track B: Tessent ATPG on the lab netlist scan_inserted.v, with compaction and fault simulation inside create_patterns, pattern write-out and QuestaSim pattern simulation. Track C: Atalanta on five ISCAS-85 circuits with random and FAN test generation, fault simulation and REVERSE plus SHUFFLE compaction. All three end in coverage analysis reported per experiment.</desc>
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#52514e"/></marker>
+<marker id="ahr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#c2410c"/></marker>
+</defs>
+<rect width="1000" height="640" fill="#fcfcfb"/>
+<text x="24" y="34" font-size="19" font-weight="600" fill="#0b0b0b">Unified DFT / ATPG workflow: three separately executed tracks</text>
+<text x="24" y="56" font-size="12.5" fill="#52514e">Solid boxes ran and are backed by tool output. Dashed boxes are report text only or not available. Results are never pooled across tracks.</text>
+
+<!-- Track A -->
+<rect x="16" y="74" width="968" height="150" rx="10" fill="#eef4fc" stroke="#c9daf2"/>
+<text x="30" y="96" font-size="13" font-weight="600" fill="#1d4f91">A · Scan insertion on riscv_core (run in sequence) · module scan-insertion/</text>
+<g font-size="12" text-anchor="middle">
+<rect x="30" y="112" width="128" height="62" rx="7" fill="#fff" stroke="#898781" stroke-dasharray="5 4"/>
+<text x="94" y="136" font-weight="600" fill="#0b0b0b">Design / RTL</text><text x="94" y="154" fill="#52514e">riscv_core RTL</text><text x="94" y="168" fill="#898781" font-size="11">not available</text>
+<rect x="186" y="112" width="128" height="62" rx="7" fill="#fff" stroke="#898781" stroke-dasharray="5 4"/>
+<text x="250" y="136" font-weight="600" fill="#0b0b0b">Synthesis</text><text x="250" y="154" fill="#52514e">Design Compiler</text><text x="250" y="168" fill="#898781" font-size="11">65 nm · report text</text>
+<rect x="342" y="112" width="128" height="62" rx="7" fill="#fff" stroke="#898781" stroke-dasharray="5 4"/>
+<text x="406" y="136" font-weight="600" fill="#0b0b0b">DFT rule checks</text><text x="406" y="154" fill="#52514e">clk_i, rst_i found</text><text x="406" y="168" fill="#898781" font-size="11">FN1/FN4/S7 open</text>
+<rect x="498" y="112" width="128" height="62" rx="7" fill="#fff" stroke="#2a78d6" stroke-width="1.6"/>
+<text x="562" y="136" font-weight="600" fill="#0b0b0b">Scan insertion</text><text x="562" y="154" fill="#52514e">Tessent Scan</text><text x="562" y="168" fill="#52514e" font-size="11">+3 ports, +10 instances</text>
+<rect x="654" y="112" width="140" height="62" rx="7" fill="#fff" stroke="#2a78d6" stroke-width="1.6"/>
+<text x="724" y="136" font-weight="600" fill="#0b0b0b">Scan-chain analysis</text><text x="724" y="154" fill="#52514e">5 chains, 2,319 cells</text><text x="724" y="168" fill="#52514e" font-size="11">464/464/464/464/463</text>
+<rect x="822" y="112" width="148" height="62" rx="7" fill="#fff" stroke="#898781" stroke-dasharray="5 4"/>
+<text x="896" y="136" font-weight="600" fill="#0b0b0b">riscv_scan.v</text><text x="896" y="154" fill="#52514e">+ ATPG setup written</text><text x="896" y="168" fill="#898781" font-size="11">files not preserved</text>
+</g>
+<g stroke="#52514e" stroke-width="1.4" marker-end="url(#ah)">
+<line x1="158" y1="143" x2="184" y2="143"/><line x1="314" y1="143" x2="340" y2="143"/><line x1="470" y1="143" x2="496" y2="143"/><line x1="626" y1="143" x2="652" y2="143"/><line x1="794" y1="143" x2="820" y2="143"/>
+</g>
+<text x="30" y="206" font-size="11.5" fill="#52514e">Script: scan-insertion/scripts/scan.do (transcribed). Evidence: Tessent insert_test_logic / report_scan_chains screenshots.</text>
+
+<!-- Gap -->
+<line x1="896" y1="174" x2="896" y2="246" stroke="#c2410c" stroke-width="1.5" stroke-dasharray="5 4"/>
+<rect x="560" y="232" width="424" height="40" rx="7" fill="#fff4ee" stroke="#c2410c" stroke-dasharray="5 4"/>
+<text x="772" y="249" font-size="12" text-anchor="middle" fill="#9a3412" font-weight="600">No evidenced hand-off: ATPG never read riscv_scan.v</text>
+<text x="772" y="264" font-size="11" text-anchor="middle" fill="#9a3412">ATPG logs show 6×22 and 5×26 chains/shift cycles, not 5×464</text>
+
+<!-- Track B -->
+<rect x="16" y="284" width="968" height="150" rx="10" fill="#fdf1ea" stroke="#f1d3c2"/>
+<text x="30" y="306" font-size="13" font-weight="600" fill="#9a3412">B · Tessent ATPG on lab scan netlist scan_inserted.v (~130 scan cells) · modules tessent-atpg/, fault-simulation/</text>
+<g font-size="12" text-anchor="middle">
+<rect x="30" y="322" width="150" height="62" rx="7" fill="#fff" stroke="#898781" stroke-dasharray="5 4"/>
+<text x="105" y="346" font-weight="600" fill="#0b0b0b">scan_inserted.v</text><text x="105" y="364" fill="#52514e">+ scan_inserted.dofile</text><text x="105" y="378" fill="#898781" font-size="11">lab input, not available</text>
+<rect x="208" y="322" width="160" height="62" rx="7" fill="#fff" stroke="#eb6834" stroke-width="1.6"/>
+<text x="288" y="346" font-weight="600" fill="#0b0b0b">ATPG</text><text x="288" y="364" fill="#52514e">stuck-at · transition</text><text x="288" y="378" fill="#52514e" font-size="11">atpg_1.do · atpg_2.do</text>
+<rect x="396" y="322" width="176" height="62" rx="7" fill="#fff" stroke="#eb6834" stroke-width="1.6"/>
+<text x="484" y="342" font-weight="600" fill="#0b0b0b">inside create_patterns</text><text x="484" y="360" fill="#52514e">compaction (tool default)</text><text x="484" y="376" fill="#52514e">+ internal fault simulation</text>
+<rect x="600" y="322" width="168" height="62" rx="7" fill="#fff" stroke="#eb6834" stroke-width="1.6"/>
+<text x="684" y="346" font-weight="600" fill="#0b0b0b">Pattern write-out</text><text x="684" y="364" fill="#52514e">serial / parallel .v, .ascii</text><text x="684" y="378" fill="#52514e" font-size="11">report_scan_volume</text>
+<rect x="796" y="322" width="174" height="62" rx="7" fill="#fff" stroke="#898781" stroke-dasharray="5 4"/>
+<text x="883" y="346" font-weight="600" fill="#0b0b0b">QuestaSim pattern sim</text><text x="883" y="364" fill="#52514e">waveforms only</text><text x="883" y="378" fill="#898781" font-size="11">completion not evidenced</text>
+</g>
+<g stroke="#52514e" stroke-width="1.4" marker-end="url(#ah)">
+<line x1="180" y1="353" x2="206" y2="353"/><line x1="368" y1="353" x2="394" y2="353"/><line x1="572" y1="353" x2="598" y2="353"/><line x1="768" y1="353" x2="794" y2="353"/>
+</g>
+<text x="30" y="416" font-size="11.5" fill="#52514e">Coverage comes from Tessent report_statistics (its internal fault simulation), not from QuestaSim.</text>
+
+<!-- Track C -->
+<rect x="16" y="446" width="968" height="122" rx="10" fill="#eef7f1" stroke="#cde6d6"/>
+<text x="30" y="468" font-size="13" font-weight="600" fill="#1f6b3a">C · Combinational ATPG on ISCAS-85 (C880, C3540, C5315, C6288, C7552) · module atpg-benchmarks/</text>
+<g font-size="12" text-anchor="middle">
+<rect x="30" y="482" width="150" height="56" rx="7" fill="#fff" stroke="#898781" stroke-dasharray="5 4"/>
+<text x="105" y="505" font-weight="600" fill="#0b0b0b">.bench netlists</text><text x="105" y="523" fill="#898781" font-size="11">public, not committed</text>
+<rect x="208" y="482" width="240" height="56" rx="7" fill="#fff" stroke="#2f9e5b" stroke-width="1.6"/>
+<text x="328" y="505" font-weight="600" fill="#0b0b0b">Atalanta RPT + DTPG (FAN)</text><text x="328" y="523" fill="#52514e">built-in fault simulation (PPSFP)</text>
+<rect x="476" y="482" width="230" height="56" rx="7" fill="#fff" stroke="#2f9e5b" stroke-width="1.6"/>
+<text x="591" y="505" font-weight="600" fill="#0b0b0b">REVERSE + SHUFFLE compaction</text><text x="591" y="523" fill="#52514e">4 circuits · C7552 run with -N</text>
+<rect x="734" y="482" width="236" height="56" rx="7" fill="#fff" stroke="#2f9e5b" stroke-width="1.6"/>
+<text x="852" y="505" font-weight="600" fill="#0b0b0b">Atalanta summary</text><text x="852" y="523" fill="#52514e">coverage, patterns, effort</text>
+</g>
+<g stroke="#52514e" stroke-width="1.4" marker-end="url(#ah)">
+<line x1="180" y1="510" x2="206" y2="510"/><line x1="448" y1="510" x2="474" y2="510"/><line x1="706" y1="510" x2="732" y2="510"/>
+</g>
+
+<!-- Analysis -->
+<rect x="16" y="580" width="968" height="44" rx="10" fill="#f3f2ee" stroke="#c3c2b7"/>
+<text x="500" y="600" font-size="13" font-weight="600" text-anchor="middle" fill="#0b0b0b">Coverage and result analysis: one table per track and design under test</text>
+<text x="500" y="616" font-size="11.5" text-anchor="middle" fill="#52514e">Atalanta "fault coverage" and Tessent "test coverage / fault coverage" use different definitions and are not compared numerically.</text>
+</svg>

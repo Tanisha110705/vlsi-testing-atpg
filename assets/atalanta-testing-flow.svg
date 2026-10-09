@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="840" viewBox="0 0 760 840" role="img" aria-labelledby="t d" font-family='system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif'>
+<title id="t">Combinational ATPG testing flow</title><desc id="d">Flow from ISCAS-85 benchmark netlist through Atalanta RPT, DTPG and test compaction to the final test set and summary report.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52514e"/></marker></defs>
+<rect width="760" height="840" fill="#fcfcfb"/>
+<text x="24" y="32" font-size="17" fill="#0b0b0b" text-anchor="start" font-weight="600" font-style="normal">Testing Flow: ISCAS-85 Benchmark to Final Test Set</text>
+<text x="24" y="54" font-size="12.5" fill="#52514e" text-anchor="start" font-weight="normal" font-style="normal">Steps in blue boxes run inside one Atalanta invocation (mode RPT + DTPG + TC)</text>
+<rect x="130.0" y="82" width="340" height="70" rx="8" fill="#ffffff" stroke="#c3c2b7" stroke-width="1.5"/>
+<text x="300.0" y="106.0" font-size="13.5" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">Benchmark circuit</text>
+<text x="300.0" y="123.0" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">ISCAS-85 combinational netlist (.bench)</text>
+<text x="300.0" y="140.0" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">C880, C3540, C5315, C6288, C7552</text>
+<path d="M300,152 L300,182" fill="none" stroke="#52514e" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="130.0" y="184" width="340" height="70" rx="8" fill="#eaf2fc" stroke="#2a78d6" stroke-width="1.5"/>
+<text x="300.0" y="208.0" font-size="13.5" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">Fault model and fault list</text>
+<text x="300.0" y="225.0" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">Single stuck-at-0 / stuck-at-1 on every line</text>
+<text x="300.0" y="242.0" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">collapsed by equivalence (e.g. C880: 942 faults)</text>
+<path d="M300,254 L300,284" fill="none" stroke="#52514e" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="130.0" y="286" width="340" height="70" rx="8" fill="#eaf2fc" stroke="#2a78d6" stroke-width="1.5"/>
+<text x="300.0" y="310.0" font-size="13.5" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">RPT - random pattern testing</text>
+<text x="300.0" y="327.0" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">packets of 32 random patterns, fault-simulated</text>
+<text x="300.0" y="344.0" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">(PPSFP); detected faults dropped</text>
+<path d="M300,356 L300,386" fill="none" stroke="#52514e" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="130.0" y="388" width="340" height="70" rx="8" fill="#eaf2fc" stroke="#2a78d6" stroke-width="1.5"/>
+<text x="300.0" y="412.0" font-size="13.5" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">DTPG - deterministic TPG (FAN)</text>
+<text x="300.0" y="429.0" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">one test per remaining fault, backtrack limit 10;</text>
+<text x="300.0" y="446.0" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">each new test fault-simulated, detected faults dropped</text>
+<path d="M300,458 L300,488" fill="none" stroke="#52514e" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="130.0" y="490" width="340" height="70" rx="8" fill="#eaf2fc" stroke="#2a78d6" stroke-width="1.5"/>
+<text x="300.0" y="522.0" font-size="13.5" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">Fault classification</text>
+<text x="300.0" y="539.0" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">detected / identified redundant / aborted</text>
+<path d="M300,560 L300,590" fill="none" stroke="#52514e" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="130.0" y="592" width="340" height="70" rx="8" fill="#eaf2fc" stroke="#2a78d6" stroke-width="1.5"/>
+<text x="300.0" y="616.0" font-size="13.5" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">TC - test compaction</text>
+<text x="300.0" y="633.0" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">REVERSE + SHUFFLE fault-simulation passes</text>
+<text x="300.0" y="650.0" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">remove patterns that detect no new fault</text>
+<path d="M300,662 L300,692" fill="none" stroke="#52514e" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="130.0" y="694" width="340" height="70" rx="8" fill="#e8f6ef" stroke="#1baf7a" stroke-width="1.5"/>
+<text x="300.0" y="718.0" font-size="13.5" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">Final test set and summary</text>
+<text x="300.0" y="735.0" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">pattern file (-t name.test), fault coverage,</text>
+<text x="300.0" y="752.0" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">pattern counts, backtracks, CPU time, memory</text>
+<line x1="476.0" y1="219" x2="492.0" y2="219" stroke="#c3c2b7" stroke-width="1"/>
+<text x="498.0" y="216" font-size="11.5" fill="#52514e" text-anchor="start" font-weight="normal" font-style="normal">Fault list is built by Atalanta;</text>
+<text x="498.0" y="232" font-size="11.5" fill="#52514e" text-anchor="start" font-weight="normal" font-style="normal">an external list can be read with -A -f</text>
+<line x1="476.0" y1="321" x2="492.0" y2="321" stroke="#c3c2b7" stroke-width="1"/>
+<text x="498.0" y="318" font-size="11.5" fill="#52514e" text-anchor="start" font-weight="normal" font-style="normal">Stops after 16 consecutive packets</text>
+<text x="498.0" y="334" font-size="11.5" fill="#52514e" text-anchor="start" font-weight="normal" font-style="normal">detect no new fault (limit = 16)</text>
+<line x1="476.0" y1="423" x2="492.0" y2="423" stroke="#c3c2b7" stroke-width="1"/>
+<text x="498.0" y="420" font-size="11.5" fill="#52514e" text-anchor="start" font-weight="normal" font-style="normal">Unspecified inputs: -0 / -1 / -R / -X</text>
+<text x="498.0" y="436" font-size="11.5" fill="#52514e" text-anchor="start" font-weight="normal" font-style="normal">fill options (setting per run not recorded)</text>
+<line x1="476.0" y1="525" x2="492.0" y2="525" stroke="#c3c2b7" stroke-width="1"/>
+<text x="498.0" y="522" font-size="11.5" fill="#52514e" text-anchor="start" font-weight="normal" font-style="normal">Fault coverage =</text>
+<text x="498.0" y="538" font-size="11.5" fill="#52514e" text-anchor="start" font-weight="normal" font-style="normal">detected / collapsed faults</text>
+<line x1="476.0" y1="627" x2="492.0" y2="627" stroke="#c3c2b7" stroke-width="1"/>
+<text x="498.0" y="624" font-size="11.5" fill="#52514e" text-anchor="start" font-weight="normal" font-style="normal">Disabled with -N (C7552 run);</text>
+<text x="498.0" y="640" font-size="11.5" fill="#52514e" text-anchor="start" font-weight="normal" font-style="normal">shuffle limit 2</text>
+<text x="24" y="826" font-size="11" fill="#898781" text-anchor="start" font-weight="normal" font-style="normal">Conceptual flow of the documented Atalanta procedure. Fsim (standalone fault simulator) was also listed; no Fsim results were recorded.</text>
+</svg>

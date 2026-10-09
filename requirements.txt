@@ -1,0 +1,7 @@
+# No third-party packages are required.
+# All scripts (scan-insertion/scripts/check_chain_balance.py and
+# atpg-benchmarks/scripts/*.py) use only the Python 3 standard library
+# (tested with Python 3.11, 3.12 and 3.13).
+#
+# The EDA flows (Synopsys Design Compiler, Siemens Tessent, Siemens QuestaSim,
+# Atalanta) are external tools and cannot be installed with pip.

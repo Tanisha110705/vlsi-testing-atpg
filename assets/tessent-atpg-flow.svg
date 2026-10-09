@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" role="img" aria-labelledby="t d">
+<title id="t">Tessent ATPG flow with reported stuck-at and transition numbers</title>
+<desc id="d">ATPG stages from netlist load to coverage report, with the fault counts, pattern counts and coverage reported by Tessent for the stuck-at and transition runs.</desc>
+<style>
+  .bg{fill:#ffffff}
+  text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;fill:#1f2328}
+  .h{font-size:17px;font-weight:600}
+  .b{font-size:12.5px;font-weight:600}
+  .s{font-size:12px}
+  .xs{font-size:11px}
+  .m{fill:#59636e}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  .box{fill:#f6f8fa;stroke:#d1d9e0;stroke-width:1.5}
+  .row{fill:none;stroke:#d1d9e0;stroke-width:1}
+  .sa{fill:#2a78d6}
+  .tf{fill:#eb6834}
+  .ln{stroke:#8c959f;stroke-width:1.5;fill:none}
+  @media (prefers-color-scheme:dark){
+    .bg{fill:#0d1117} text{fill:#e6edf3} .m{fill:#9198a1}
+    .box{fill:#161b22;stroke:#3d444d} .row{stroke:#3d444d}
+    .sa{fill:#3987e5} .tf{fill:#d95926} .ln{stroke:#6e7681}
+  }
+</style>
+<defs>
+  <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8c959f"/></marker>
+</defs>
+<rect class="bg" width="960" height="560"/>
+<text class="h" x="24" y="32">ATPG flow in Tessent (patterns -scan) with the reported numbers</text>
+<text class="s m" x="24" y="52">Netlist: scan_inserted.v, the ATPG lab netlist. It is not the 2319-cell riscv_core scan netlist; see docs/evidence-audit.md.</text>
+
+<!-- stage boxes: 6 x 140 wide, gap 18, start 24 -->
+<g>
+  <rect class="box" x="24"  y="72" width="140" height="84" rx="6"/>
+  <text class="b" x="36" y="94">1 Load design</text>
+  <text class="xs m mono" x="36" y="112">read_verilog</text>
+  <text class="xs m mono" x="36" y="126">read_cell_library</text>
+  <text class="xs m mono" x="36" y="140">dofile (ATPG setup)</text>
+  <path class="ln" d="M164 114 H180" marker-end="url(#a)"/>
+
+  <rect class="box" x="182" y="72" width="140" height="84" rx="6"/>
+  <text class="b" x="194" y="94">2 Rule checks</text>
+  <text class="xs m mono" x="194" y="112">set_system_mode</text>
+  <text class="xs m mono" x="194" y="126">  analysis</text>
+  <text class="xs m" x="194" y="142">clock off-state: pass</text>
+  <path class="ln" d="M322 114 H338" marker-end="url(#a)"/>
+
+  <rect class="box" x="340" y="72" width="140" height="84" rx="6"/>
+  <text class="b" x="352" y="94">3 Fault list</text>
+  <text class="xs m mono" x="352" y="112">add_faults -all</text>
+  <text class="xs m mono" x="352" y="126">set_fault_type</text>
+  <text class="xs m mono" x="352" y="140">  transition</text>
+  <path class="ln" d="M480 114 H496" marker-end="url(#a)"/>
+
+  <rect class="box" x="498" y="72" width="140" height="84" rx="6"/>
+  <text class="b" x="510" y="94">4 Generate</text>
+  <text class="xs m mono" x="510" y="112">create_patterns</text>
+  <text class="xs m" x="510" y="128">two passes shown</text>
+  <text class="xs m" x="510" y="142">abort limit 300/100</text>
+  <path class="ln" d="M638 114 H654" marker-end="url(#a)"/>
+
+  <rect class="box" x="656" y="72" width="140" height="84" rx="6"/>
+  <text class="b" x="668" y="94">5 Fault simulate</text>
+  <text class="xs m" x="668" y="112">internal, per pattern</text>
+  <text class="xs m" x="668" y="128">drops detected faults</text>
+  <text class="xs m" x="668" y="142">→ fault classes</text>
+  <path class="ln" d="M796 114 H812" marker-end="url(#a)"/>
+
+  <rect class="box" x="814" y="72" width="122" height="84" rx="6"/>
+  <text class="b" x="826" y="94">6 Report</text>
+  <text class="xs m" x="826" y="112">report_statistics</text>
+  <text class="xs m" x="826" y="126">write_patterns</text>
+  <text class="xs m" x="826" y="140">report_scan_volume</text>
+</g>
+
+<!-- table -->
+<text class="s" x="24" y="190" font-weight="600">Reported values per stage (Tessent output in the report)</text>
+<rect class="sa" x="462" y="179" width="12" height="12" rx="2"/><text class="s" x="480" y="190">Stuck-at (atpg_1.do)</text>
+<rect class="tf" x="712" y="179" width="12" height="12" rx="2"/><text class="s" x="730" y="190">Transition (atpg_2.do)</text>
+
+<g>
+  <line class="row" x1="24" y1="204" x2="936" y2="204"/>
+  <text class="s" x="24" y="226">Scan configuration seen by ATPG</text>
+  <text class="s" x="462" y="226">6 chains · 22 shift cycles</text>
+  <text class="s" x="712" y="226">5 chains · 26 shift cycles</text>
+  <line class="row" x1="24" y1="238" x2="936" y2="238"/>
+  <text class="s" x="24" y="260">Fault universe (FU, full)</text>
+  <text class="s" x="462" y="260">3300</text>
+  <text class="s" x="712" y="260">2690</text>
+  <line class="row" x1="24" y1="272" x2="936" y2="272"/>
+  <text class="s" x="24" y="294">Faults entering simulation  (FU − faults already classified)</text>
+  <text class="s" x="462" y="294">2273 = 3300 − DI 955 − UU 6 − TI 66</text>
+  <text class="s" x="712" y="294">1910 = 2690 − DI 775 − MPO 5</text>
+  <line class="row" x1="24" y1="306" x2="936" y2="306"/>
+  <text class="s" x="24" y="328">Pass 1: patterns simulated → test coverage</text>
+  <text class="s" x="462" y="328">64 → 98.14% (48 test patterns)</text>
+  <text class="s" x="712" y="328">64 → 82.75% (54 test patterns)</text>
+  <line class="row" x1="24" y1="340" x2="936" y2="340"/>
+  <text class="s" x="24" y="362">Pass 2: patterns simulated → test coverage</text>
+  <text class="s" x="462" y="362">85 → 100.00% (+21 = 69)</text>
+  <text class="s" x="712" y="362">103 → 85.95% (+32 = 86)</text>
+  <line class="row" x1="24" y1="374" x2="936" y2="374"/>
+  <text class="s" x="24" y="396">Detected: by simulation (DS) + by implication (DI)</text>
+  <text class="s" x="462" y="396">2273 + 955 = 3228</text>
+  <text class="s" x="712" y="396">1537 + 775 = 2312</text>
+  <line class="row" x1="24" y1="408" x2="936" y2="408"/>
+  <text class="s" x="24" y="430">Not detected</text>
+  <text class="s" x="462" y="430">UU 6 · TI 66 (excluded from TC)</text>
+  <text class="s" x="712" y="430">AU 375 · UO 3 (AAB 3)</text>
+  <line class="row" x1="24" y1="442" x2="936" y2="442"/>
+  <text class="s" x="24" y="464">Test coverage · fault coverage · ATPG effectiveness</text>
+  <text class="s" x="462" y="464" font-weight="600">100.00% · 97.82% · 100.00%</text>
+  <text class="s" x="712" y="464" font-weight="600">85.95% · 85.95% · 99.89%</text>
+  <line class="row" x1="24" y1="476" x2="936" y2="476"/>
+  <text class="s" x="24" y="498">Test patterns · scan loads · volume (cell loads)</text>
+  <text class="s" x="462" y="498">69 · 70 · 9,240</text>
+  <text class="s" x="712" y="498">86 (3 + 83 seq) · 87 · 11,310</text>
+  <line class="row" x1="24" y1="510" x2="936" y2="510"/>
+</g>
+<text class="xs m" x="24" y="532">The "faults entering simulation" breakdown is arithmetic that reconciles the log's #faults line with report_statistics; Tessent does not print it.</text>
+<text class="xs m" x="24" y="548">DS/DI = detected by simulation / by implication; UU = unused; TI = tied; AU = ATPG-untestable; UO = unobserved; MPO = masked primary output; AAB = aborted.</text>
+</svg>

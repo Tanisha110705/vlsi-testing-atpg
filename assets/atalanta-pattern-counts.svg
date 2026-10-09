@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="440" viewBox="0 0 760 440" role="img" aria-labelledby="t d" font-family='system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif'>
+<title id="t">Test patterns before and after compaction</title><desc id="d">Grouped bars of Atalanta pattern counts before and after REVERSE + SHUFFLE compaction.</desc>
+<rect width="760" height="440" fill="#fcfcfb"/>
+<text x="24.0" y="32.0" font-size="17" fill="#0b0b0b" text-anchor="start" font-weight="600">Test Patterns Before and After REVERSE + SHUFFLE Compaction</text>
+<text x="24.0" y="54.0" font-size="12.5" fill="#52514e" text-anchor="start" font-weight="normal">Circuits with a reported before/after pair only; ordered by gate count</text>
+<rect x="150" y="72" width="12" height="12" rx="2" fill="#2a78d6"/>
+<text x="168.0" y="82.0" font-size="12" fill="#52514e" text-anchor="start" font-weight="normal">Before compaction</text>
+<rect x="299" y="72" width="12" height="12" rx="2" fill="#eb6834"/>
+<text x="317.0" y="82.0" font-size="12" fill="#52514e" text-anchor="start" font-weight="normal">After compaction</text>
+<line x1="150.0" y1="98.0" x2="150.0" y2="336.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="150.0" y="354.0" font-size="11" fill="#898781" text-anchor="middle" font-weight="normal">0</text>
+<line x1="235.0" y1="98.0" x2="235.0" y2="336.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="235.0" y="354.0" font-size="11" fill="#898781" text-anchor="middle" font-weight="normal">50</text>
+<line x1="320.0" y1="98.0" x2="320.0" y2="336.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="320.0" y="354.0" font-size="11" fill="#898781" text-anchor="middle" font-weight="normal">100</text>
+<line x1="405.0" y1="98.0" x2="405.0" y2="336.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="405.0" y="354.0" font-size="11" fill="#898781" text-anchor="middle" font-weight="normal">150</text>
+<line x1="490.0" y1="98.0" x2="490.0" y2="336.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="490.0" y="354.0" font-size="11" fill="#898781" text-anchor="middle" font-weight="normal">200</text>
+<line x1="575.0" y1="98.0" x2="575.0" y2="336.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="575.0" y="354.0" font-size="11" fill="#898781" text-anchor="middle" font-weight="normal">250</text>
+<line x1="660.0" y1="98.0" x2="660.0" y2="336.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="660.0" y="354.0" font-size="11" fill="#898781" text-anchor="middle" font-weight="normal">300</text>
+<text x="405.0" y="372.0" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal">Test patterns</text>
+<text x="136.0" y="126.0" font-size="13" fill="#0b0b0b" text-anchor="end" font-weight="600">C880</text>
+<text x="136.0" y="141.0" font-size="11" fill="#898781" text-anchor="end" font-weight="normal">-49.5%</text>
+<path d="M150.0,110.0 H327.9 Q331.9,110.0 331.9,114.0 V126.0 Q331.9,130.0 327.9,130.0 H150.0 Z" fill="#2a78d6"><title>C880 before: 107</title></path>
+<text x="337.9" y="124.5" font-size="12" fill="#0b0b0b" text-anchor="start" font-weight="normal">107</text>
+<path d="M150.0,132.0 H237.8 Q241.8,132.0 241.8,136.0 V148.0 Q241.8,152.0 237.8,152.0 H150.0 Z" fill="#eb6834"><title>C880 after: 54</title></path>
+<text x="247.8" y="146.5" font-size="12" fill="#0b0b0b" text-anchor="start" font-weight="normal">54</text>
+<text x="136.0" y="184.0" font-size="13" fill="#0b0b0b" text-anchor="end" font-weight="600">C3540</text>
+<text x="136.0" y="199.0" font-size="11" fill="#898781" text-anchor="end" font-weight="normal">-39.5%</text>
+<path d="M150.0,168.0 H576.1 Q580.1,168.0 580.1,172.0 V184.0 Q580.1,188.0 576.1,188.0 H150.0 Z" fill="#2a78d6"><title>C3540 before: 253</title></path>
+<text x="586.1" y="182.5" font-size="12" fill="#0b0b0b" text-anchor="start" font-weight="normal">253</text>
+<path d="M150.0,190.0 H406.1 Q410.1,190.0 410.1,194.0 V206.0 Q410.1,210.0 406.1,210.0 H150.0 Z" fill="#eb6834"><title>C3540 after: 153</title></path>
+<text x="416.1" y="204.5" font-size="12" fill="#0b0b0b" text-anchor="start" font-weight="normal">153</text>
+<text x="136.0" y="242.0" font-size="13" fill="#0b0b0b" text-anchor="end" font-weight="600">C5315</text>
+<text x="136.0" y="257.0" font-size="11" fill="#898781" text-anchor="end" font-weight="normal">-45.8%</text>
+<path d="M150.0,226.0 H513.2 Q517.2,226.0 517.2,230.0 V242.0 Q517.2,246.0 513.2,246.0 H150.0 Z" fill="#2a78d6"><title>C5315 before: 216</title></path>
+<text x="523.2" y="240.5" font-size="12" fill="#0b0b0b" text-anchor="start" font-weight="normal">216</text>
+<path d="M150.0,248.0 H344.9 Q348.9,248.0 348.9,252.0 V264.0 Q348.9,268.0 344.9,268.0 H150.0 Z" fill="#eb6834"><title>C5315 after: 117</title></path>
+<text x="354.9" y="262.5" font-size="12" fill="#0b0b0b" text-anchor="start" font-weight="normal">117</text>
+<text x="136.0" y="300.0" font-size="13" fill="#0b0b0b" text-anchor="end" font-weight="600">C6288</text>
+<text x="136.0" y="315.0" font-size="11" fill="#898781" text-anchor="end" font-weight="normal">-48.1%</text>
+<path d="M150.0,284.0 H234.4 Q238.4,284.0 238.4,288.0 V300.0 Q238.4,304.0 234.4,304.0 H150.0 Z" fill="#2a78d6"><title>C6288 before: 52</title></path>
+<text x="244.4" y="298.5" font-size="12" fill="#0b0b0b" text-anchor="start" font-weight="normal">52</text>
+<path d="M150.0,306.0 H191.9 Q195.9,306.0 195.9,310.0 V322.0 Q195.9,326.0 191.9,326.0 H150.0 Z" fill="#eb6834"><title>C6288 after: 27</title></path>
+<text x="201.9" y="320.5" font-size="12" fill="#0b0b0b" text-anchor="start" font-weight="normal">27</text>
+<text x="24.0" y="394.0" font-size="11" fill="#898781" text-anchor="start" font-weight="normal">C7552 omitted: run with compaction disabled (atalanta -N); it reports one set of 373 patterns.</text>
+<text x="24.0" y="410.0" font-size="11" fill="#898781" text-anchor="start" font-weight="normal">Percentages under each name are (before - after) / before.</text>
+<text x="24.0" y="426.0" font-size="11" fill="#898781" text-anchor="start" font-weight="normal">Source: Atalanta summaries, transcribed in atpg-benchmarks/results/atalanta_summary.csv. Derived chart, not a tool screenshot.</text>
+</svg>

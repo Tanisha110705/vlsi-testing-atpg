@@ -1,0 +1,11 @@
+measure,runs,spearman_rho_vs_gates
+levels,all 5 runs,0.40
+collapsed_faults,all 5 runs,0.90
+redundant_faults,all 5 runs,0.30
+fault_coverage_pct,all 5 runs,-0.30
+backtracks,all 5 runs,0.60
+cpu_total_s,all 5 runs,0.40
+memory_kb,all 5 runs,0.40
+patterns_before_compaction,4 compacted runs,-0.40
+patterns_after_compaction,4 compacted runs,-0.40
+memory_kb,4 compacted runs,1.00

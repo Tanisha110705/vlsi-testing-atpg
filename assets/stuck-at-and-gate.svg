@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420" viewBox="0 0 760 420" role="img" aria-labelledby="t d" font-family='system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif'>
+<title id="t">Single stuck-at fault model</title><desc id="d">Conceptual two-input AND gate shown fault-free, with input b stuck-at-0, and with input b stuck-at-1, including the test vector that detects each fault.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52514e"/></marker></defs>
+<rect width="760" height="420" fill="#fcfcfb"/>
+<text x="24" y="32" font-size="17" fill="#0b0b0b" text-anchor="start" font-weight="600" font-style="normal">Fault Model: Single Stuck-at Faults on a 2-input AND Gate</text>
+<text x="24" y="54" font-size="12.5" fill="#52514e" text-anchor="start" font-weight="normal" font-style="normal">Conceptual illustration, not taken from a benchmark netlist. Values shown as fault-free / faulty.</text>
+<rect x="40" y="78" width="200" height="270" rx="8" fill="#ffffff" stroke="#c3c2b7" stroke-width="1.2"/>
+<text x="140" y="102" font-size="14" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">Fault-free</text>
+<text x="140" y="122" font-size="12" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">a=1, b=1</text>
+<path d="M110,150 H150 A40,40 0 0 1 150,230 H110 Z" fill="#ffffff" stroke="#0b0b0b" stroke-width="1.8"/>
+<line x1="50" y1="172" x2="110" y2="172" stroke="#0b0b0b" stroke-width="1.8"/>
+<line x1="50" y1="208" x2="110" y2="208" stroke="#0b0b0b" stroke-width="1.8"/>
+<line x1="190" y1="190" x2="240" y2="190" stroke="#0b0b0b" stroke-width="1.8"/>
+<text x="40" y="176" font-size="13" fill="#52514e" text-anchor="end" font-weight="normal" font-style="normal">a</text>
+<text x="40" y="212" font-size="13" fill="#52514e" text-anchor="end" font-weight="normal" font-style="normal">b</text>
+<text x="66" y="166" font-size="13" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">1</text>
+<text x="66" y="202" font-size="13" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">1</text>
+<text x="222" y="184" font-size="13" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">1</text>
+<text x="250" y="194" font-size="13" fill="#52514e" text-anchor="start" font-weight="normal" font-style="normal">z</text>
+<text x="140" y="296" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">z = a AND b = 1</text>
+<text x="140" y="314" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">Reference response</text>
+<rect x="290" y="78" width="200" height="270" rx="8" fill="#ffffff" stroke="#c3c2b7" stroke-width="1.2"/>
+<text x="390" y="102" font-size="14" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">b stuck-at-0</text>
+<text x="390" y="122" font-size="12" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">test a=1, b=1</text>
+<path d="M360,150 H400 A40,40 0 0 1 400,230 H360 Z" fill="#ffffff" stroke="#0b0b0b" stroke-width="1.8"/>
+<line x1="300" y1="172" x2="360" y2="172" stroke="#0b0b0b" stroke-width="1.8"/>
+<line x1="300" y1="208" x2="360" y2="208" stroke="#0b0b0b" stroke-width="1.8"/>
+<line x1="440" y1="190" x2="490" y2="190" stroke="#0b0b0b" stroke-width="1.8"/>
+<text x="290" y="176" font-size="13" fill="#52514e" text-anchor="end" font-weight="normal" font-style="normal">a</text>
+<text x="290" y="212" font-size="13" fill="#52514e" text-anchor="end" font-weight="normal" font-style="normal">b</text>
+<text x="316" y="166" font-size="13" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">1</text>
+<text x="316" y="202" font-size="13" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">1/0</text>
+<text x="472" y="184" font-size="13" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">1/0</text>
+<text x="500" y="194" font-size="13" fill="#52514e" text-anchor="start" font-weight="normal" font-style="normal">z</text>
+<line x1="338" y1="198" x2="348" y2="218" stroke="#eb6834" stroke-width="3"/>
+<line x1="348" y1="198" x2="338" y2="218" stroke="#eb6834" stroke-width="3"/>
+<text x="343" y="236" font-size="11.5" fill="#eb6834" text-anchor="middle" font-weight="600" font-style="normal">s-a-0</text>
+<text x="390" y="296" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">Activate: drive b to 1</text>
+<text x="390" y="314" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">Propagate: a = 1 passes b to z</text>
+<text x="390" y="336" font-size="11.5" fill="#eb6834" text-anchor="middle" font-weight="600" font-style="normal">Detected: z differs (1/0 or 0/1)</text>
+<rect x="540" y="78" width="200" height="270" rx="8" fill="#ffffff" stroke="#c3c2b7" stroke-width="1.2"/>
+<text x="640" y="102" font-size="14" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">b stuck-at-1</text>
+<text x="640" y="122" font-size="12" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">test a=1, b=0</text>
+<path d="M610,150 H650 A40,40 0 0 1 650,230 H610 Z" fill="#ffffff" stroke="#0b0b0b" stroke-width="1.8"/>
+<line x1="550" y1="172" x2="610" y2="172" stroke="#0b0b0b" stroke-width="1.8"/>
+<line x1="550" y1="208" x2="610" y2="208" stroke="#0b0b0b" stroke-width="1.8"/>
+<line x1="690" y1="190" x2="740" y2="190" stroke="#0b0b0b" stroke-width="1.8"/>
+<text x="540" y="176" font-size="13" fill="#52514e" text-anchor="end" font-weight="normal" font-style="normal">a</text>
+<text x="540" y="212" font-size="13" fill="#52514e" text-anchor="end" font-weight="normal" font-style="normal">b</text>
+<text x="566" y="166" font-size="13" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">1</text>
+<text x="566" y="202" font-size="13" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">0/1</text>
+<text x="722" y="184" font-size="13" fill="#0b0b0b" text-anchor="middle" font-weight="600" font-style="normal">0/1</text>
+<text x="750" y="194" font-size="13" fill="#52514e" text-anchor="start" font-weight="normal" font-style="normal">z</text>
+<line x1="588" y1="198" x2="598" y2="218" stroke="#eb6834" stroke-width="3"/>
+<line x1="598" y1="198" x2="588" y2="218" stroke="#eb6834" stroke-width="3"/>
+<text x="593" y="236" font-size="11.5" fill="#eb6834" text-anchor="middle" font-weight="600" font-style="normal">s-a-1</text>
+<text x="640" y="296" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">Activate: drive b to 0</text>
+<text x="640" y="314" font-size="11.5" fill="#52514e" text-anchor="middle" font-weight="normal" font-style="normal">Propagate: a = 1 passes b to z</text>
+<text x="640" y="336" font-size="11.5" fill="#eb6834" text-anchor="middle" font-weight="600" font-style="normal">Detected: z differs (1/0 or 0/1)</text>
+<text x="24" y="372" font-size="11.5" fill="#52514e" text-anchor="start" font-weight="normal" font-style="normal">A line stuck-at-v is activated by driving it to the opposite value and detected when the difference reaches an observable output.</text>
+<text x="24" y="390" font-size="11.5" fill="#52514e" text-anchor="start" font-weight="normal" font-style="normal">Equivalent faults (here b s-a-0, a s-a-0 and z s-a-0) need the same test, so ATPG keeps one per class: the collapsed fault list.</text>
+<text x="24" y="410" font-size="11" fill="#898781" text-anchor="start" font-weight="normal" font-style="normal">Transition (slow-to-rise / slow-to-fall) faults are not modelled by Atalanta and are not part of this project.</text>
+</svg>

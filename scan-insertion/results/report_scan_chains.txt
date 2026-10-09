@@ -1,0 +1,15 @@
+# Transcribed from a Tessent Scan terminal screenshot in the project report
+# (scan-insertion/results/screenshots/tessent-scan-chains-report.png). This is NOT the original log file.
+# Command: report_scan_chains
+
+==============================
+Scan Chains Created by the Tool
+==============================
+
+   Scan mode 'unwrapped' scan chains:
+   ----------------------------------
+      chain = chain0   group = dummy  input = /ts_si[0]  output = /ts_so[0]  length = 464
+      chain = chain1   group = dummy  input = /ts_si[1]  output = /ts_so[1]  length = 464
+      chain = chain2   group = dummy  input = /ts_si[2]  output = /ts_so[2]  length = 464
+      chain = chain3   group = dummy  input = /ts_si[3]  output = /ts_so[3]  length = 464
+      chain = chain4   group = dummy  input = /ts_si[4]  output = /ts_so[4]  length = 463

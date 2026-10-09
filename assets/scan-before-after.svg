@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" font-family="Helvetica, Arial, sans-serif">
+  <title>Before and after scan insertion (conceptual)</title>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#52606d"/></marker>
+    <marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1d4ed8"/></marker>
+  </defs>
+  <rect width="960" height="560" fill="#ffffff"/>
+  <text x="24" y="34" font-size="20" font-weight="bold" fill="#1f2933">Before vs after scan insertion (conceptual)</text>
+
+  <!-- BEFORE -->
+  <rect x="24" y="56" width="440" height="300" rx="8" fill="#ffffff" stroke="#cbd2d9"/>
+  <text x="44" y="82" font-size="16" font-weight="bold" fill="#1f2933">Before</text>
+  <text x="110" y="82" font-size="13" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" fill="#52606d">netlist_riscvcore.v</text>
+  <g font-size="13" fill="#1f2933">
+    <rect x="44" y="110" width="100" height="56" rx="6" fill="#f1f5f9" stroke="#64748b"/><text x="94" y="143" text-anchor="middle">logic</text>
+    <rect x="204" y="110" width="80" height="56" rx="4" fill="#ffffff" stroke="#1f2933" stroke-width="1.5"/><text x="244" y="143" text-anchor="middle">FF</text>
+    <rect x="344" y="110" width="100" height="56" rx="6" fill="#f1f5f9" stroke="#64748b"/><text x="394" y="143" text-anchor="middle">logic</text>
+    <rect x="44" y="210" width="100" height="56" rx="6" fill="#f1f5f9" stroke="#64748b"/><text x="94" y="243" text-anchor="middle">logic</text>
+    <rect x="204" y="210" width="80" height="56" rx="4" fill="#ffffff" stroke="#1f2933" stroke-width="1.5"/><text x="244" y="243" text-anchor="middle">FF</text>
+    <rect x="344" y="210" width="100" height="56" rx="6" fill="#f1f5f9" stroke="#64748b"/><text x="394" y="243" text-anchor="middle">logic</text>
+  </g>
+  <g stroke="#52606d" stroke-width="1.5" marker-end="url(#a)">
+    <line x1="144" y1="138" x2="202" y2="138"/><line x1="284" y1="138" x2="342" y2="138"/>
+    <line x1="144" y1="238" x2="202" y2="238"/><line x1="284" y1="238" x2="342" y2="238"/>
+  </g>
+  <text x="44" y="306" font-size="13" fill="#1f2933">Flip-flop state is set and observed only through</text>
+  <text x="44" y="324" font-size="13" fill="#1f2933">functional logic, often many cycles deep.</text>
+
+  <!-- AFTER -->
+  <rect x="496" y="56" width="440" height="300" rx="8" fill="#ffffff" stroke="#cbd2d9"/>
+  <text x="516" y="82" font-size="16" font-weight="bold" fill="#1f2933">After</text>
+  <text x="572" y="82" font-size="13" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" fill="#52606d">riscv_scan.v</text>
+  <g font-size="13" fill="#1f2933">
+    <rect x="516" y="110" width="100" height="56" rx="6" fill="#f1f5f9" stroke="#64748b"/><text x="566" y="143" text-anchor="middle">logic</text>
+    <rect x="676" y="110" width="80" height="56" rx="4" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.5"/><text x="716" y="136" text-anchor="middle">scan</text><text x="716" y="152" text-anchor="middle">FF</text>
+    <rect x="816" y="110" width="100" height="56" rx="6" fill="#f1f5f9" stroke="#64748b"/><text x="866" y="143" text-anchor="middle">logic</text>
+    <rect x="516" y="210" width="100" height="56" rx="6" fill="#f1f5f9" stroke="#64748b"/><text x="566" y="243" text-anchor="middle">logic</text>
+    <rect x="676" y="210" width="80" height="56" rx="4" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.5"/><text x="716" y="236" text-anchor="middle">scan</text><text x="716" y="252" text-anchor="middle">FF</text>
+    <rect x="816" y="210" width="100" height="56" rx="6" fill="#f1f5f9" stroke="#64748b"/><text x="866" y="243" text-anchor="middle">logic</text>
+  </g>
+  <g stroke="#52606d" stroke-width="1.5" marker-end="url(#a)">
+    <line x1="616" y1="132" x2="674" y2="132"/><line x1="756" y1="132" x2="814" y2="132"/>
+    <line x1="616" y1="232" x2="674" y2="232"/><line x1="756" y1="232" x2="814" y2="232"/>
+  </g>
+  <!-- scan path -->
+  <g stroke="#1d4ed8" stroke-width="2" fill="none">
+    <path d="M640,100 L660,100 L660,156 L674,156" marker-end="url(#b)"/>
+    <path d="M756,156 L786,156 L786,190 L660,190 L660,256 L674,256" marker-end="url(#b)"/>
+    <path d="M756,256 L786,256 L786,296 L812,296" marker-end="url(#b)"/>
+  </g>
+  <text x="564" y="104" font-size="12" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" fill="#1d4ed8">ts_si[n]</text>
+  <text x="818" y="300" font-size="12" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" fill="#1d4ed8">ts_so[n]</text>
+  <text x="516" y="324" font-size="13" fill="#1f2933">With scan_en active, the flip-flops form a shift</text>
+  <text x="516" y="342" font-size="13" fill="#1f2933">register between dedicated test ports.</text>
+
+  <!-- changes -->
+  <text x="24" y="392" font-size="15" font-weight="bold" fill="#1f2933">What changed (Tessent insert_test_logic summary and report)</text>
+  <g font-size="13" fill="#1f2933">
+    <text x="36" y="416">• 2,319 sequential cells reported as converted to scan cells (visible cells: SDFCNQD1HPBWP)</text>
+    <text x="36" y="436">• +3 top-level ports: <tspan font-family="DejaVu Sans Mono, Menlo, Consolas, monospace">ts_si, ts_so, scan_en</tspan> (ts_si/ts_so carry 5 chains)</text>
+    <text x="36" y="456">• +10 instances: 5 lockup latches (LNQD4HPBWP) + 5 buffers (CKBD2HPBWP)</text>
+    <text x="36" y="476">• 5 scan chains stitched through the scan-in pins of the scan cells</text>
+  </g>
+  <text x="24" y="508" font-size="15" font-weight="bold" fill="#1f2933">What is intended not to change</text>
+  <text x="36" y="532" font-size="13" fill="#1f2933">• Functional D-to-Q behaviour while scan_en is inactive. No equivalence check or simulation of this is included in the repository.</text>
+</svg>

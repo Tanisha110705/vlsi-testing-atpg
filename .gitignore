@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.pyc
+
+# OS / editor
+.DS_Store
+*~
+*.swp
+*.bak
+
+# Atalanta / Fsim run outputs (regenerate locally)
+*.test
+*.out
+*.flt
+
+# EDA logs and simulator work data
+*.log
+*.jou
+transcript
+work/
+*.wlf
+*.vcd
+*.fsdb
+
+# Netlists and pattern files (large, and may contain NDA library content)
+*_scan.v
+*scan_inserted.v
+netlist_*.v
+*patterns.v
+*.ascii
+*.stil
+
+# Foundry / vendor library files must never be committed
+*.mdt
+*.lib
+*.db
+
+# Tessent / Design Compiler scratch
+*.flat
+*.flat.gz
+*.tdb
+*.tsdb_outdir/
+tessent_work/
+command.log
+default.svf
+alib-*/

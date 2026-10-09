@@ -1,0 +1,6 @@
+circuit,gates,collapsed_faults,detected_faults_derived,redundant_faults,aborted_faults,fault_coverage_pct_reported,fault_coverage_pct_recomputed,coverage_excl_redundant_pct_derived,fault_efficiency_pct_derived,pattern_reduction_pct_derived
+c880,383,942,942,0,0,100.000,100.000,100.000,100.000,49.53
+c7552,3512,7550,7418,71,61,98.252,98.252,99.184,99.192,
+c5315,2307,5350,5291,59,0,98.897,98.897,100.000,100.000,45.83
+c3540,1669,3428,3291,137,0,96.004,96.004,100.000,100.000,39.53
+c6288,2416,7744,7710,34,0,99.561,99.561,100.000,100.000,48.08

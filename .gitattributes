@@ -1,0 +1,3 @@
+# Tessent dofiles are Tcl-based command scripts. Without this, GitHub Linguist
+# classifies *.do as Stata.
+*.do linguist-language=Tcl

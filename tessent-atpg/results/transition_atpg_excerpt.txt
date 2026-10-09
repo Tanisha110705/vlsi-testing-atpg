@@ -1,0 +1,74 @@
+==============================================================================
+Tessent ATPG output excerpt - transition run (atpg_2.do)
+------------------------------------------------------------------------------
+Provenance: TRANSCRIBED by hand from the terminal screenshots in the course
+report (Task 3 Appendix, pages 20-21). NOT a raw tool log file. Cropped
+originals: tessent-atpg/results/screenshots/tessent-transition-atpg-run.png
+           tessent-atpg/results/screenshots/tessent-transition-statistics.png
+           tessent-atpg/results/screenshots/tessent-transition-fault-classes.png
+Netlist: LAB4/scan_inserted.v (see docs/evidence-audit.md - this run's scan
+configuration, 5 chains / 26 shift cycles, is not the 5 x 464 riscv_core one).
+The two CPU_time values (4.3 and 4.4 s) come from two separate report
+printouts in the screenshots.
+==============================================================================
+
+//   Current holdpi setting:          Off
+//                Calling:            set_transition_holdpi on
+//   Current output masks setting:    Off
+//                Calling:            set_output_masks on
+//   Current abort limit setting:     30
+//                Calling:            set_abort_limit 300 100
+//   Current sequential depth:        0
+//   Optimal sequential depth:        2
+//   Warning: Broadside transition testing requires minimum depth of 2.
+//                Calling:            set_pattern_type -sequential 2
+// Simulation performed for #gates = 1153  #faults = 1910
+// system mode = analysis    pattern source = internal patterns
+// #patterns  test      #faults  #faults   # eff.    # test    process   RE/AU/AAB
+// simulated  coverage  in list  detected  patterns  patterns  CPU time
+// deterministic ATPG invoked with comb/seq abort limit = 300/100
+//  ---        ------    ---      ---       ---       ---      0.26 sec  0/258/3
+//  64         82.75%    206      1451      54        54       0.27 sec
+//  ---        ------    ---      ---       ---       ---      0.29 sec  0/375/3
+//  103        85.95%      3        86      32        86       0.29 sec
+// Warning: The number of AU faults has increased by 19.37% since the start
+//          of this ATPG run.
+// Performing redundant fault identification for 8 faults
+//   (result rows not visible in the source)
+
+Statistics Report - Transition Faults
+  Fault Classes            #faults (total)
+  FU (full)                2690
+  UO (unobserved)             3 ( 0.11%)
+  DS (det_simulation)      1537 (57.14%)
+  DI (det_implication)      775 (28.81%)
+  AU (atpg_untestable)      375 (13.94%)
+  Fault Sub-classes
+    AU (atpg_untestable)
+      MPO (mask_po)           5 ( 0.19%)
+      Unclassified          370 (13.75%)
+    UC+UO
+      AAB (atpg_abort)        3 ( 0.11%)
+  Coverage
+    test_coverage           85.95%
+    fault_coverage          85.95%
+    atpg_effectiveness      99.89%
+  #test_patterns              86
+    #basic_patterns            3
+    #clock_sequential_patterns 83
+  #simulated_patterns        103
+  CPU_time (secs)             4.3   (4.4 in the second printout)
+
+// command: write_patterns LAB6/transition/serialpatterns.v -verilog -serial -replace
+// command: write_patterns LAB6/transition/parallelpatterns.v -verilog -parallel -replace
+// command: write_patterns LAB6/transition/pattern.ascii -ascii -parallel -replace
+// command: report_scan_volume
+// Scan volume report.
+//    scan chains  : 5
+//    shift cycles : 26
+// pattern           # test    # scan   volume
+// type              patterns  loads    (cell loads or unloads)
+// chain_test            1        1        130
+// basic                 3        3        390
+// clock_sequential     83       83      10790
+// total                87       87      11310  (11.3K)

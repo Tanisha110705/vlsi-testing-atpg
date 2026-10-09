@@ -1,0 +1,29 @@
+# Transcribed from a Tessent Scan terminal screenshot in the project report
+# (scan-insertion/results/screenshots/tessent-scan-chains-report.png). This is NOT the original log file.
+# Command: report_scan_cells
+# EXCERPT ONLY: the first 19 rows of chain0 were visible in the screenshot.
+# The remaining ~2300 rows (and all rows of chain1..chain4) are not available.
+
+Scan mode 'unwrapped' scan cells:
+------------------------------------------------------------------------------------------------------
+CellNo  ChainName  GroupName  Pathname                                  CellName       ScanOut  Clock  ClockPolarity
+------------------------------------------------------------------------------------------------------
+-       chain0     dummy      /u_div/ts_lockup_latchn_clkc0_intno750_i  LNQD4HPBWP              clk_i  (-)
+0       chain0     dummy      /u_div/dividend_q_reg[16]                 SDFCNQD1HPBWP  Q        clk_i  (+)
+1       chain0     dummy      /u_div/dividend_q_reg[17]                 SDFCNQD1HPBWP  Q        clk_i  (+)
+2       chain0     dummy      /u_div/dividend_q_reg[18]                 SDFCNQD1HPBWP  Q        clk_i  (+)
+3       chain0     dummy      /u_div/dividend_q_reg[19]                 SDFCNQD1HPBWP  Q        clk_i  (+)
+4       chain0     dummy      /u_div/dividend_q_reg[20]                 SDFCNQD1HPBWP  Q        clk_i  (+)
+5       chain0     dummy      /u_div/dividend_q_reg[21]                 SDFCNQD1HPBWP  Q        clk_i  (+)
+6       chain0     dummy      /u_div/dividend_q_reg[22]                 SDFCNQD1HPBWP  Q        clk_i  (+)
+7       chain0     dummy      /u_div/dividend_q_reg[23]                 SDFCNQD1HPBWP  Q        clk_i  (+)
+8       chain0     dummy      /u_div/dividend_q_reg[24]                 SDFCNQD1HPBWP  Q        clk_i  (+)
+9       chain0     dummy      /u_div/dividend_q_reg[25]                 SDFCNQD1HPBWP  Q        clk_i  (+)
+10      chain0     dummy      /u_div/dividend_q_reg[26]                 SDFCNQD1HPBWP  Q        clk_i  (+)
+11      chain0     dummy      /u_div/dividend_q_reg[27]                 SDFCNQD1HPBWP  Q        clk_i  (+)
+12      chain0     dummy      /u_div/dividend_q_reg[28]                 SDFCNQD1HPBWP  Q        clk_i  (+)
+13      chain0     dummy      /u_div/dividend_q_reg[29]                 SDFCNQD1HPBWP  Q        clk_i  (+)
+14      chain0     dummy      /u_div/dividend_q_reg[30]                 SDFCNQD1HPBWP  Q        clk_i  (+)
+15      chain0     dummy      /u_div/dividend_q_reg[31]                 SDFCNQD1HPBWP  Q        clk_i  (+)
+16      chain0     dummy      /u_div/quotient_q_reg[30]                 SDFCNQD1HPBWP  Q        clk_i  (+)
+17      chain0     dummy      /u_div/quotient_q_reg[29]                 SDFCNQD1HPBWP  Q        clk_i  (+)
